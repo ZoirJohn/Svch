@@ -3,7 +3,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
-import Main from "~/pages/Main/Main";
+import Main from "pages/Home/Home";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			<body className="bg-white text-black">
 				<div className="min-h-screen flex flex-col">
 					<Header />
-					<Main>{children}</Main>
+					<main className="shrink-0 grow">{children}</main>
 					<Footer />
 
 					<ScrollRestoration />
@@ -46,6 +46,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
 	return <Outlet />;
+}
+export function meta({}: Route.MetaArgs) {
+	return [{ title: "Svch" }, { name: "description", content: "Svch - Created so you won't need us twice" }];
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
