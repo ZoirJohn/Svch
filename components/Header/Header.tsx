@@ -3,8 +3,8 @@ import { Link } from "react-router";
 
 export default function Header() {
 	return (
-		<header className="mx-auto dark:bg-blue-light bg-white min-w-6/10 mt-3 p-4 px-5 rounded-2xl">
-			<div className="container mx-auto flex justify-between items-center">
+		<header className="mt-3 px-3">
+			<div className="container mx-auto flex justify-between items-center w-full dark:bg-blue-light bg-white p-4 px-5 rounded-2xl">
 				<Link to={"/"}>
 					<img
 						src="/assets/icons/logo-light.svg"
@@ -26,7 +26,7 @@ export default function Header() {
 							viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg"
 							stroke="#fff"
-							className="absolute w-8 top-1/2 -translate-1/2 left-5/4 group-hover:left-12/14 transition-all"
+							className="absolute w-8 top-1/2 -translate-1/2 left-5/4 group-hover:left-13/15 transition-all"
 						>
 							<g
 								id="SVGRepo_bgCarrier"
