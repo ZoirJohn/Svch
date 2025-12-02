@@ -7,6 +7,12 @@
 	--breakpoint-xs: 425px;
 	--breakpoint-xxs: 320px;
 }
+@font-face {
+	font-family: "CaslonBlackSH-Regular";
+	src: url("https://db.onlinewebfonts.com/t/94973628ebcf5d3ee78e12cbf92e9003.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
 
 html,
 body {
@@ -14,15 +20,21 @@ body {
 		background: var(--color-blue-light);
 	}
 }
+.caslon-black {
+	font-family: "CaslonBlackSH-Regular";
+}
 .container {
 	@apply md:max-w-6xl mx-auto xxs:max-w-screen;
 }
 h1 {
 	@apply text-6xl;
 }
+h2 {
+	@apply text-5xl;
+}
+h4 {
+	@apply text-4xl;
+}
 .button {
 	@apply relative bg-blue-dark px-4 py-1 hover:pr-10 rounded-lg text-white text-lg transition-all cursor-pointer overflow-hidden block;
-}
-.layout-section {
-	@apply mt-3 px-3;
 }

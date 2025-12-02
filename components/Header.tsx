@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function Header() {
 	return (
-		<header className="layout-section">
+		<header className="mt-3 px-3">
 			<div className="container mx-auto flex justify-between items-center w-full dark:bg-blue-light bg-white p-4 px-5 rounded-2xl">
 				<Link to={"/"}>
 					<img

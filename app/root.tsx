@@ -13,7 +13,6 @@ export const links: Route.LinksFunction = () => [
 		rel: "stylesheet",
 		href: "https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap",
 	},
-	{ rel: "stylesheet", href: "https://db.onlinewebfonts.com/t/94973628ebcf5d3ee78e12cbf92e9003.ttf" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
