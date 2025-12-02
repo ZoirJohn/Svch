@@ -4,6 +4,8 @@
 	--font-sans: "Funnel Sans";
 	--color-blue-dark: #63777b;
 	--color-blue-light: #dfe2db;
+	--breakpoint-xs: 425px;
+	--breakpoint-xxs: 320px;
 }
 
 html,
@@ -12,12 +14,15 @@ body {
 		background: var(--color-blue-light);
 	}
 }
+.container {
+	@apply md:max-w-6xl mx-auto xxs:max-w-screen;
+}
+h1 {
+	@apply text-6xl;
+}
 .button {
 	@apply relative bg-blue-dark px-4 py-1 hover:pr-10 rounded-lg text-white text-lg transition-all cursor-pointer overflow-hidden block;
 }
-.container {
-	@apply md:max-w-6xl;
-}
-h1{
-	@apply text-6xl
+.layout-section {
+	@apply mt-3 px-3;
 }

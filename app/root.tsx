@@ -1,8 +1,6 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import type { Route } from "./+types/root";
 import "./app.css";
-import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -32,9 +30,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="bg-white text-black">
 				<div className="min-h-screen flex flex-col">
-					<Header />
-					<main className="shrink-0 grow">{children}</main>
-					<Footer />
+					{children}
 
 					<ScrollRestoration />
 					<Scripts />
