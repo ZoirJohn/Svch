@@ -1,7 +1,8 @@
-import Footer from "components/Footer";
-import Header from "components/Header";
-import Hero from "components/Hero";
-import ProductExplanation from "components/ProductExplanation";
+import Feedback from "widgets/Feedback";
+import Footer from "widgets/Footer";
+import Header from "widgets/Header";
+import Hero from "widgets/Hero";
+import ProductExplanation from "widgets/ProductExplanation";
 
 export default function Home() {
 	return (
@@ -10,6 +11,7 @@ export default function Home() {
 			<main className="shrink-0 grow">
 				<Hero />
 				<ProductExplanation />
+				<Feedback />
 			</main>
 			<Footer />
 		</>
