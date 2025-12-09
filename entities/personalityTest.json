@@ -1,0 +1,62 @@
+[
+	{
+		"question_id": "G001",
+		"category": "Goals",
+		"text": "What is your desired family size (including yourself and your partner)?",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": 1,
+				"text": "Just us (No children)"
+			},
+			{
+				"value": 2,
+				"text": "2-3 people (1 child)"
+			},
+			{
+				"value": 3,
+				"text": "4-5 people (2-3 children)"
+			},
+			{
+				"value": 4,
+				"text": "6+ people (Large family)"
+			}
+		]
+	},
+	{
+		"question_id": "G002",
+		"category": "Goals",
+		"text": "How important is it for you that your future spouse continues their professional career after marriage?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Not Important At All",
+			"Very Important"
+		]
+	},
+	{
+		"question_id": "G003",
+		"category": "Goals",
+		"text": "In a serious disagreement, what is your primary conflict resolution goal?",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "To find a solution quickly and restore peace."
+			},
+			{
+				"value": "B",
+				"text": "To fully understand my partner's perspective, even if it takes time."
+			},
+			{
+				"value": "C",
+				"text": "To make sure both parties feel heard and validated."
+			},
+			{
+				"value": "D",
+				"text": "To ultimately be proven right, or find the 'correct' position."
+			}
+		]
+	}
+]
