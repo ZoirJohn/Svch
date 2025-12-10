@@ -1,61 +1,564 @@
 [
 	{
-		"question_id": "G001",
-		"category": "Goals",
-		"text": "What is your desired family size (including yourself and your partner)?",
-		"type": "multiple_choice",
-		"options": [
-			{
-				"value": 1,
-				"text": "Just us (No children)"
-			},
-			{
-				"value": 2,
-				"text": "2-3 people (1 child)"
-			},
-			{
-				"value": 3,
-				"text": "4-5 people (2-3 children)"
-			},
-			{
-				"value": 4,
-				"text": "6+ people (Large family)"
-			}
-		]
-	},
-	{
-		"question_id": "G002",
-		"category": "Goals",
-		"text": "How important is it for you that your future spouse continues their professional career after marriage?",
+		"question_id": "F101",
+		"category": "Family Values & Dynamics",
+		"text": "I believe my parents/elders should have **significant input** on major life decisions (career changes, moving, raising children).",
 		"type": "scale",
 		"scale_min": 1,
 		"scale_max": 5,
 		"scale_labels": [
-			"Not Important At All",
-			"Very Important"
+			"Strongly Disagree (Independent)",
+			"Strongly Agree (Family Input)"
 		]
 	},
 	{
-		"question_id": "G003",
-		"category": "Goals",
-		"text": "In a serious disagreement, what is your primary conflict resolution goal?",
+		"question_id": "F102",
+		"category": "Family Values & Dynamics",
+		"text": "What is your preferred living arrangement after marriage?",
 		"type": "multiple_choice",
 		"options": [
 			{
 				"value": "A",
-				"text": "To find a solution quickly and restore peace."
+				"text": "Live with parents/in-laws (Traditional/Compound)."
 			},
 			{
 				"value": "B",
-				"text": "To fully understand my partner's perspective, even if it takes time."
+				"text": "Live nearby (same neighborhood/city)."
 			},
 			{
 				"value": "C",
-				"text": "To make sure both parties feel heard and validated."
+				"text": "Live independently (different city or country)."
+			}
+		]
+	},
+	{
+		"question_id": "F103",
+		"category": "Family Values & Dynamics",
+		"text": "What role should **tradition and religion** play in how we raise our children?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Not a factor (Secular)",
+			"The central guiding principle"
+		]
+	},
+	{
+		"question_id": "F104",
+		"category": "Family Values & Dynamics",
+		"text": "If a conflict arises between our parents/families, I would prioritize:",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "My spouse and our immediate family unit."
+			},
+			{
+				"value": "B",
+				"text": "Respecting and protecting my own family first."
+			},
+			{
+				"value": "C",
+				"text": "Finding a harmonious compromise for everyone involved."
+			}
+		]
+	},
+	{
+		"question_id": "F105",
+		"category": "Family Values & Dynamics",
+		"text": "I believe the primary family financial support should always come from **one spouse** (traditional gender role).",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Egalitarian)",
+			"Strongly Agree (Traditional)"
+		]
+	},
+	{
+		"question_id": "F106",
+		"category": "Family Values & Dynamics",
+		"text": "I am comfortable with my parents or siblings dropping by our home **unannounced**.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Need Notice)",
+			"Completely Acceptable"
+		]
+	},
+	{
+		"question_id": "F107",
+		"category": "Family Values & Dynamics",
+		"text": "I expect my spouse to make time for **my family's** annual holiday/celebration schedule, even if it conflicts with theirs.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree",
+			"Strongly Agree"
+		]
+	},
+	{
+		"question_id": "C201",
+		"category": "Conflict Resolution & Comm.",
+		"text": "When stressed, my usual response is to **withdraw and seek solitude**, rather than discuss the issue immediately.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Seek Discussion)",
+			"Strongly Agree (Seek Space)"
+		]
+	},
+	{
+		"question_id": "C202",
+		"category": "Conflict Resolution & Comm.",
+		"text": "If my partner raises a complaint or criticism, my first thought is to:",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "Defend my actions and explain my side."
+			},
+			{
+				"value": "B",
+				"text": "Stop, listen carefully, and validate their feelings."
+			},
+			{
+				"value": "C",
+				"text": "Shut down the conversation until I am calm."
+			}
+		]
+	},
+	{
+		"question_id": "C203",
+		"category": "Conflict Resolution & Comm.",
+		"text": "How comfortable are you discussing **finances and budgeting** with a partner?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Highly Uncomfortable",
+			"Completely Open & Comfortable"
+		]
+	},
+	{
+		"question_id": "C204",
+		"category": "Conflict Resolution & Comm.",
+		"text": "I believe that couples should **never go to sleep angry** and must resolve all issues before bed.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Need Space)",
+			"Strongly Agree (Resolve Instantly)"
+		]
+	},
+	{
+		"question_id": "C205",
+		"category": "Conflict Resolution & Comm.",
+		"text": "How easy is it for you to sincerely **apologize** and take full responsibility when you are wrong?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Very Difficult (Pride/Ego)",
+			"Very Easy (Prioritize Harmony)"
+		]
+	},
+	{
+		"question_id": "P301",
+		"category": "Personality",
+		"text": "I am a **highly organized** person who plans well in advance and hates procrastination.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Spontaneous)",
+			"Strongly Agree (Conscientious)"
+		]
+	},
+	{
+		"question_id": "P302",
+		"category": "Personality",
+		"text": "I often worry about the future and struggle to remain **calm** when faced with unexpected changes.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Calm)",
+			"Strongly Agree (Anxious/Neurotic)"
+		]
+	},
+	{
+		"question_id": "P303",
+		"category": "Personality",
+		"text": "I seek out **social situations** and feel drained if I spend too much time alone.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Introvert)",
+			"Strongly Agree (Extravert)"
+		]
+	},
+	{
+		"question_id": "P304",
+		"category": "Personality",
+		"text": "I am eager to **try new things** (food, travel, ideas) and find routine to be boring.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Routine-Oriented)",
+			"Strongly Agree (Openness)"
+		]
+	},
+	{
+		"question_id": "P305",
+		"category": "Personality",
+		"text": "I am generally trusting and believe that **most people are good** and well-intentioned.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Suspicious)",
+			"Strongly Agree (Agreeable)"
+		]
+	},
+	{
+		"question_id": "P306",
+		"category": "Personality",
+		"text": "I am good at quickly **forgiving** others and rarely hold grudges.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Long Memory)",
+			"Strongly Agree (Forgiving)"
+		]
+	},
+	{
+		"question_id": "A401",
+		"category": "Achievement & Ambition",
+		"text": "Which statement best reflects your focus on **professional achievement**?",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "My career is my central focus, and my partner must support this ambition."
+			},
+			{
+				"value": "B",
+				"text": "Career is important, but balancing it with family life is the priority."
+			},
+			{
+				"value": "C",
+				"text": "Work is a means to an end; family/personal time is more important."
+			}
+		]
+	},
+	{
+		"question_id": "A402",
+		"category": "Achievement & Ambition",
+		"text": "What is your biggest life accomplishment that you are most proud of? (This is a mandatory profile field.)",
+		"type": "free_text",
+		"max_length": 500
+	},
+	{
+		"question_id": "A403",
+		"category": "Achievement & Ambition",
+		"text": "If a partner were to earn **significantly more** or **significantly less** than me, how would I feel?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Very Uncomfortable (Need Equality)",
+			"Completely Comfortable (Egalitarian)"
+		]
+	},
+	{
+		"question_id": "A404",
+		"category": "Achievement & Ambition",
+		"text": "How important is it for you to have a **shared financial goal** (e.g., buying a home, saving for retirement) with your spouse?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Not Important (Separate Finances)",
+			"Extremely Important (Joint Finances/Goals)"
+		]
+	},
+	{
+		"question_id": "S501",
+		"category": "Attachment & Security",
+		"text": "When my partner is distant or busy, I tend to **worry** that they might be losing interest in me.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Secure)",
+			"Strongly Agree (Anxious Attachment)"
+		]
+	},
+	{
+		"question_id": "S502",
+		"category": "Attachment & Security",
+		"text": "I prefer to **solve my problems alone** and would rather not involve my partner in my emotional challenges right away.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Seek Closeness)",
+			"Strongly Agree (Avoidant Attachment)"
+		]
+	},
+	{
+		"question_id": "S503",
+		"category": "Attachment & Security",
+		"text": "How comfortable are you with a partner who needs frequent **verbal reassurance** (e.g., 'I love you,' 'We are okay')?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Very Uncomfortable",
+			"Completely Comfortable"
+		]
+	},
+	{
+		"question_id": "S504",
+		"category": "Attachment & Security",
+		"text": "I trust my partner **completely** and rarely feel the need to check up on their activities or communications.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree",
+			"Strongly Agree (High Trust)"
+		]
+	},
+	{
+		"question_id": "S505",
+		"category": "Attachment & Security",
+		"text": "I need a lot of personal space and time for myself, even in a committed relationship.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Need Togetherness)",
+			"Strongly Agree (Need Independence)"
+		]
+	},
+	{
+		"question_id": "S506",
+		"category": "Attachment & Security",
+		"text": "If my partner leaves me, I believe I would be able to fully recover and find happiness again.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Fear Abandonment)",
+			"Strongly Agree (Resilient)"
+		]
+	},
+	{
+		"question_id": "I601",
+		"category": "Intimacy & Emotional Needs",
+		"text": "How frequently do you require **physical affection** (non-sexual touch, holding hands, hugging) to feel loved and connected?",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "Daily or several times a day."
+			},
+			{
+				"value": "B",
+				"text": "Several times a week."
+			},
+			{
+				"value": "C",
+				"text": "Weekly."
 			},
 			{
 				"value": "D",
-				"text": "To ultimately be proven right, or find the 'correct' position."
+				"text": "Less than weekly."
+			}
+		]
+	},
+	{
+		"question_id": "I602",
+		"category": "Intimacy & Emotional Needs",
+		"text": "I believe a spouse should know me so well that I **rarely have to ask** for what I need.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Prefer Direct Communication)",
+			"Strongly Agree (Seek Intuitive Partner)"
+		]
+	},
+	{
+		"question_id": "I603",
+		"category": "Intimacy & Emotional Needs",
+		"text": "How important is it that your partner actively encourages you to pursue your own **individual hobbies and friendships**?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Not Important (We should do everything together)",
+			"Extremely Important (Need Space for Growth)"
+		]
+	},
+	{
+		"question_id": "I604",
+		"category": "Intimacy & Emotional Needs",
+		"text": "**What is your most valued 'Love Language'** for *receiving* affection? (Choose only one)",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "Words of Affirmation."
+			},
+			{
+				"value": "B",
+				"text": "Quality Time."
+			},
+			{
+				"value": "C",
+				"text": "Receiving Gifts."
+			},
+			{
+				"value": "D",
+				"text": "Acts of Service."
+			},
+			{
+				"value": "E",
+				"text": "Physical Touch."
+			}
+		]
+	},
+	{
+		"question_id": "I605",
+		"category": "Intimacy & Emotional Needs",
+		"text": "I need a partner who can provide **strong emotional support** without trying to 'fix' my problem.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Prefer Solutions)",
+			"Strongly Agree (Prefer Empathy/Validation)"
+		]
+	},
+	{
+		"question_id": "I606",
+		"category": "Intimacy & Emotional Needs",
+		"text": "How often do you feel the need to have a deep, **non-superficial conversation** with your partner?",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "Daily."
+			},
+			{
+				"value": "B",
+				"text": "Several times a week."
+			},
+			{
+				"value": "C",
+				"text": "Weekly."
+			},
+			{
+				"value": "D",
+				"text": "Less than weekly."
+			}
+		]
+	},
+	{
+		"question_id": "I607",
+		"category": "Intimacy & Emotional Needs",
+		"text": "I am generally better at **giving affection/praise** than I am at **receiving it**.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree",
+			"Strongly Agree"
+		]
+	},
+	{
+		"question_id": "E701",
+		"category": "Ethics, Values & Social Resp.",
+		"text": "If you witness an ethical or moral boundary being crossed (e.g., dishonesty in business), your primary instinct is to:",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "Directly address and challenge the behavior."
+			},
+			{
+				"value": "B",
+				"text": "Report it to the proper authority/elder."
+			},
+			{
+				"value": "C",
+				"text": "Avoid confrontation and distance yourself from the situation."
+			}
+		]
+	},
+	{
+		"question_id": "E702",
+		"category": "Ethics, Values & Social Resp.",
+		"text": "**Philanthropy/Charity** is a core responsibility, and I plan to dedicate a specific portion of our family's income/time to it.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Private Finances)",
+			"Strongly Agree (Community Focus)"
+		]
+	},
+	{
+		"question_id": "E703",
+		"category": "Ethics, Values & Social Resp.",
+		"text": "How important is it that your partner's **political or social views** closely align with your own?",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Not Important At All (Respect Differences)",
+			"A Dealbreaker (Must Align)"
+		]
+	},
+	{
+		"question_id": "E704",
+		"category": "Ethics, Values & Social Resp.",
+		"text": "I believe it is generally acceptable to **tell a small 'white lie'** if it prevents major emotional distress or conflict for my partner.",
+		"type": "scale",
+		"scale_min": 1,
+		"scale_max": 5,
+		"scale_labels": [
+			"Strongly Disagree (Value Honesty Above All)",
+			"Strongly Agree (Value Peace/Kindness Above All)"
+		]
+	},
+	{
+		"question_id": "E705",
+		"category": "Ethics, Values & Social Resp.",
+		"text": "When making major decisions that affect others (e.g., buying a car, moving), I prioritize the needs of:",
+		"type": "multiple_choice",
+		"options": [
+			{
+				"value": "A",
+				"text": "My immediate family (spouse and children)."
+			},
+			{
+				"value": "B",
+				"text": "My parents and extended family."
+			},
+			{
+				"value": "C",
+				"text": "Our household's financial stability."
 			}
 		]
 	}

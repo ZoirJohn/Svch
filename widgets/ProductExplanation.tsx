@@ -48,6 +48,7 @@ export default function ProductExplanation() {
 							src={img}
 							alt={alt}
 							className="w-120"
+							loading="lazy"
 						/>
 						<div className="basis-1/3 flex flex-col gap-4">
 							<h4 className="text-nowrap text-blue-dark">{title}</h4>

@@ -7,6 +7,8 @@ export default function Hero() {
 						src="shared/img/banner.png"
 						alt="Banner"
 						className="z-1 absolute w-full top-0 translate-y-0"
+						fetchPriority="high"
+						loading="eager"
 					/>
 					<div className="group z-2 relative flex flex-col justify-end items-center gap-10 hover:bg-blue-light/45 min-h-[inherit] text-white transition-all *:transition-all *:duration-500">
 						<p className="opacity-0 group-hover:opacity-100 text-xl group-hover:-translate-y-40 caslon-black">Delete us after the wedding.</p>
