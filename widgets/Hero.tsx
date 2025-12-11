@@ -4,7 +4,7 @@ export default function Hero() {
 			<div className="container">
 				<div className="relative rounded-3xl md:min-h-120 lg:min-h-170 xl:min-h-180 sm:min-h-100 xs:min-h-75 xxs:min-h-50 overflow-hidden select-none banner">
 					<img
-						src="shared/img/banner.png"
+						src="shared/img/banner.avif"
 						alt="Banner"
 						className="z-1 absolute w-full top-0 translate-y-0"
 						fetchPriority="high"
