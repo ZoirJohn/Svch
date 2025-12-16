@@ -9,4 +9,6 @@ export const account = new Account(client);
 export const signUp = () =>
 	account.createOAuth2Session({
 		provider: OAuthProvider.Google,
+		success: "http://localhost:5173/dashboard",
+		failure: "http://localhost:5173/error",
 	});

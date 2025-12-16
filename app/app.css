@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
+@font-face {
+	font-family: "Caslon";
+	src: url("/shared/fonts/Caslon.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
 @theme {
 	--font-sans: "Funnel Sans";
 	--color-blue-dark: #63777b;
 	--color-blue-light: #dfe2db;
 	--breakpoint-xs: 425px;
 	--breakpoint-xxs: 320px;
-}
-@font-face {
-	font-family: "CaslonBlackSH-Regular";
-	src: url("https://db.onlinewebfonts.com/t/94973628ebcf5d3ee78e12cbf92e9003.ttf") format("truetype");
-	font-weight: normal;
-	font-style: normal;
 }
 
 html,
@@ -21,7 +22,7 @@ body {
 	}
 }
 .caslon-black {
-	font-family: "CaslonBlackSH-Regular";
+	font-family: "Caslon";
 }
 .container {
 	@apply md:max-w-6xl mx-auto xxs:max-w-screen;
@@ -36,14 +37,11 @@ h4 {
 	@apply text-5xl;
 }
 h5 {
-	@apply text-4xl;
-}
-h6 {
 	@apply text-sm;
 }
 .button {
 	@apply relative bg-blue-dark px-4 py-1 hover:pr-10 rounded-lg text-white text-lg transition-all cursor-pointer overflow-hidden block;
 }
 .ui-component {
-	@apply mx-auto flex justify-between items-center w-full dark:bg-blue-light bg-white p-4 px-5 rounded-2xl ;
+	@apply mx-auto flex justify-between items-center w-full dark:bg-blue-light bg-white p-4 px-5 rounded-2xl;
 }
