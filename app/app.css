@@ -45,3 +45,7 @@ h5 {
 .ui-component {
 	@apply mx-auto flex justify-between items-center w-full dark:bg-blue-light bg-white p-4 px-5 rounded-2xl;
 }
+
+input{
+	@apply border
+}
