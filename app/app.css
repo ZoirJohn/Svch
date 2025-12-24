@@ -33,19 +33,44 @@ h1 {
 h2 {
 	@apply text-6xl;
 }
-h4 {
+h3 {
 	@apply text-5xl;
 }
-h5 {
+h4 {
 	@apply text-sm;
 }
+h5 {
+}
+h6 {
+}
 .button {
-	@apply relative bg-blue-dark px-4 py-1 hover:pr-10 rounded-lg text-white text-lg transition-all cursor-pointer overflow-hidden block;
+	@apply relative bg-blue-dark px-4 py-1 hover:pr-10 rounded-lg text-white text-lg transition-all overflow-hidden block;
 }
 .ui-component {
 	@apply mx-auto flex justify-between items-center w-full dark:bg-blue-light bg-white p-4 px-5 rounded-2xl;
 }
 
-input{
-	@apply border
+input {
+	@apply border;
+}
+
+.form-label {
+	@apply block;
+}
+input {
+	font-size: large;
+	padding: 0.2em 0.75em;
+	border-radius: 0.5em;
+	width: 100%;
+	border: none;
+	outline: 1px solid var(--color-blue-light);
+}
+input:focus {
+	outline: 2px solid var(--color-blue-dark);
+}
+button:hover {
+	cursor: pointer;
+}
+button:focus {
+	outline: 2px solid var(--color-blue-dark);
 }
