@@ -37,16 +37,18 @@ h3 {
 	@apply text-5xl;
 }
 h4 {
-	@apply text-sm;
+	@apply text-4xl;
 }
 h5 {
+	@apply text-3xl;
 }
 h6 {
+	@apply text-2xl;
 }
-.button {
+.nav-button {
 	@apply relative bg-blue-dark px-4 py-1 hover:pr-10 rounded-lg text-white text-lg transition-all overflow-hidden block;
 }
-.ui-component {
+.component {
 	@apply mx-auto flex justify-between items-center w-full dark:bg-blue-light bg-white p-4 px-5 rounded-2xl;
 }
 
@@ -68,9 +70,21 @@ input {
 input:focus {
 	outline: 2px solid var(--color-blue-dark);
 }
+label {
+	font-size: 1.125rem;
+}
+button {
+	font-size: 1.125rem;
+}
 button:hover {
 	cursor: pointer;
 }
 button:focus {
 	outline: 2px solid var(--color-blue-dark);
+}
+.button-primary {
+	background: var(--color-blue-light);
+}
+.input-error{
+	@apply text-red-500 absolute -bottom-6 left-0
 }

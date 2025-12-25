@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<main className="shrink-0 grow">
+			<main className="shrink-0 grow px-3">
 				<Hero />
 				<ProductExplanation />
 				<Feedback />

@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function Header() {
 	return (
 		<header className="mt-3 px-3">
-			<div className="container ui-component">
+			<div className="container component">
 				<Link to={"/"}>
 					<img
 						src="shared/icons/logo-light.svg"
@@ -14,7 +14,7 @@ export default function Header() {
 				<div>
 					<Link
 						to={"/auth/signup"}
-						className="button group"
+						className="nav-button group"
 					>
 						Find a spouse
 						<svg

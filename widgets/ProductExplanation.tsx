@@ -36,22 +36,22 @@ export default function ProductExplanation() {
 	return (
 		<section className="mt-10 layout-section">
 			<div className="container">
-				<h2 className="text-center mb-8">
+				<h2 className="mb-8 text-center">
 					How does <span className="text-blue-dark">Svch</span> work?
 				</h2>
 				{actions.map(({ img, alt, title, description, reverse }) => (
 					<div
-						className={"flex items-center justify-center gap-8" + (reverse ? " flex-row-reverse" : "")}
+						className={"flex items-center justify-center xl:gap-8 gap-4" + (reverse ? " flex-row-reverse" : "")}
 						key={img + "-" + Math.random()}
 					>
 						<img
 							src={img}
 							alt={alt}
-							className="w-120"
+							className="w-100"
 							loading="lazy"
 						/>
-						<div className="basis-1/3 flex flex-col gap-4">
-							<h4 className="text-nowrap text-blue-dark">{title}</h4>
+						<div className="flex flex-col gap-4 xl:max-w-125 max-w-100">
+							<h3 className="text-blue-dark ">{title}</h3>
 							<p className="text-xl">{description}</p>
 						</div>
 					</div>

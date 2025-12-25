@@ -1,6 +1,6 @@
 export default function Hero() {
 	return (
-		<section className="mt-3 px-3">
+		<section className="mt-3">
 			<div className="container">
 				<div className="relative rounded-3xl md:min-h-120 lg:min-h-170 xl:min-h-180 sm:min-h-100 xs:min-h-75 xxs:min-h-50 overflow-hidden select-none banner">
 					<img

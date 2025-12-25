@@ -1,4 +1,4 @@
-import { Form, useForm, type SubmitHandler } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import type { EmailAndPasswordFormType } from "shared/types";
 
 export default function SignUp() {
@@ -13,9 +13,9 @@ export default function SignUp() {
 		<main className="flex justify-center items-center shrink-0 grow">
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="flex flex-col shadow [&>div]:mb-4 [&>div]:w-full p-8 border border-blue-light rounded-lg md:w-96 h-96 items-start"
+				className="flex flex-col shadow [&>div]:mb-8 [&>div]:relative [&>div]:w-full p-8 border border-blue-light rounded-lg md:w-96 items-start"
 			>
-				<h3>Login</h3>
+				<h1 className="mb-4 text-4xl!">Sign up</h1>
 				<div>
 					<label
 						htmlFor="full_name"
@@ -29,7 +29,7 @@ export default function SignUp() {
 						id="full_name"
 						autoComplete="name"
 					/>
-					{errors.full_name && <span>Full name should be: Firstname Lastname</span>}
+					{errors.full_name && <span className="input-error">Firstname Lastname</span>}
 				</div>
 				<div>
 					<label htmlFor="email">Email</label>
@@ -39,12 +39,18 @@ export default function SignUp() {
 						id="email"
 						autoComplete="email"
 					/>
+					{errors.email && <span className="input-error">example@mail.com</span>}
 				</div>
 
-				<button type="submit">Sign Up</button>
+				<button
+					type="submit"
+					className="button-primary mb-8 py-2 px-4 rounded-lg ml-auto"
+				>
+					Sign Up
+				</button>
 				<button
 					type="button"
-					className="flex justify-center items-center gap-4 bg-blue-light py-1 rounded-xl w-full"
+					className="flex justify-center items-center gap-2 bg-blue-light py-1 rounded-xl w-full"
 				>
 					Sign in with Google
 					<svg
