@@ -13,7 +13,7 @@ export default function Header() {
 				</Link>
 				<div>
 					<Link
-						to={"/auth/signup"}
+						to={"/auth/sign-up"}
 						className="nav-button group"
 					>
 						Find a spouse

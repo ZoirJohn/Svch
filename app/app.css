@@ -79,12 +79,12 @@ button {
 button:hover {
 	cursor: pointer;
 }
-button:focus {
+*:focus {
 	outline: 2px solid var(--color-blue-dark);
 }
 .button-primary {
 	background: var(--color-blue-light);
 }
-.input-error{
-	@apply text-red-500 absolute -bottom-6 left-0
+.input-error {
+	@apply text-red-500 absolute -bottom-6 left-0;
 }
