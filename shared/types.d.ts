@@ -1,20 +1,24 @@
-import type { UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+import type { FieldErrors, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
 
 export interface Feedback {
 	feedback: string;
 	img: string;
 	authors: string[];
 }
-export interface EmailAndPasswordFormType {
+export interface LoginForm {
+	fullName: string;
 	email: string;
 	password: string;
-	full_name?: string;
 }
-export interface AuthFormType {
-	register: UseFormRegister<EmailAndPasswordFormType>;
-	errors: FieldErrors<EmailAndPasswordFormType>;
-	formTitle: string;
-	type: "sign-in" | "sign-up";
-	handleSubmit: UseFormHandleSubmit;
-	onSubmit: SubmitHandler<EmailAndPasswordFormType>;
+export interface SignupForm {
+	fullName: string;
+	email: string;
+	password: string;
+}
+export interface Field<T> {
+	autoComplete: string;
+	inputType: string;
+	htmlFor: keyof T;
+	labelText: string;
+	validation: { required: boolean; pattern?: RegExp };
 }
