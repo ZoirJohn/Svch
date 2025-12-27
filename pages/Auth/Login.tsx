@@ -8,15 +8,16 @@ export default function SignUp() {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<EmailAndPasswordFormType>();
-	const onSubmit: SubmitHandler<EmailAndPasswordFormType> = (data) => console.log(data);
+	const onSubmit: SubmitHandler<EmailAndPasswordFormType> = (data) => {console.log(data)};
 	return (
 		<main className="flex justify-center items-center shrink-0 grow">
 			<AuthForm
 				errors={errors}
-				formTitle="Sign up"
+				formTitle="Login"
 				handleSubmit={handleSubmit}
 				register={register}
-				type="sign-up"
+				type="sign-in"
+				onSubmit={onSubmit}
 			/>
 		</main>
 	);

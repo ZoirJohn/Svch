@@ -14,6 +14,7 @@ export interface AuthFormType {
 	register: UseFormRegister<EmailAndPasswordFormType>;
 	errors: FieldErrors<EmailAndPasswordFormType>;
 	formTitle: string;
-	type: "sig-in" | "sign-up";
+	type: "sign-in" | "sign-up";
 	handleSubmit: UseFormHandleSubmit;
+	onSubmit: SubmitHandler<EmailAndPasswordFormType>;
 }

@@ -1,11 +1,10 @@
-import type { FieldErrors, UseFormRegister } from "react-hook-form";
 import AuthLink from "./AuthLink";
-import type { AuthFormType, EmailAndPasswordFormType } from "shared/types";
+import type { AuthFormType } from "shared/types";
 
-export default function AuthForm({ handleSubmit, register, errors, formTitle, type }: AuthFormType) {
+export default function AuthForm({ handleSubmit, register, errors, formTitle, type, onSubmit }: AuthFormType) {
 	return (
 		<form
-			onSubmit={() => handleSubmit(console.log("Hello World"))}
+			onSubmit={handleSubmit(onSubmit)}
 			className="[&>div]:relative flex flex-col items-center shadow [&>div]:mb-6 p-8 border border-blue-light rounded-lg [&>div]:w-full md:w-96"
 		>
 			<h1 className="mb-4 text-4xl!">{formTitle}</h1>
@@ -42,14 +41,13 @@ export default function AuthForm({ handleSubmit, register, errors, formTitle, ty
 					id="password"
 					autoComplete="password"
 				/>
-				{errors.email && <span className="input-error">example@mail.com</span>}
 			</div>
 
 			<button
 				type="submit"
 				className="mb-8 ml-auto px-4 py-2 rounded-lg button-primary"
 			>
-				Sign Up
+				{type == "sign-up" ? "Sign Up" : "Login"}
 			</button>
 			<span className="block bg-blue-light mb-8 w-full h-px"></span>
 			<button
@@ -83,7 +81,10 @@ export default function AuthForm({ handleSubmit, register, errors, formTitle, ty
 					></path>
 				</svg>
 			</button>
-			<AuthLink link={`/auth/${type == "sig-in" ? "sign-in" : "sign-up"}`} />
+			<AuthLink
+				link={`/auth/${type == "sign-in" ? "sign-up" : "sign-in"}`}
+				linkText={`${type == "sign-in" ? "Don't have an account? Sign up" : "Already have an account? Login"}`}
+			/>
 		</form>
 	);
 }

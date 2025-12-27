@@ -79,7 +79,7 @@ button {
 button:hover {
 	cursor: pointer;
 }
-*:focus {
+input:focus {
 	outline: 2px solid var(--color-blue-dark);
 }
 .button-primary {
