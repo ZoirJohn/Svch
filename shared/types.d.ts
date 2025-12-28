@@ -1,4 +1,4 @@
-import type { FieldErrors, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+import type { FieldErrors, RegisterOptions, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
 
 export interface Feedback {
 	feedback: string;
@@ -18,7 +18,7 @@ export interface SignupForm {
 export interface Field<T> {
 	autoComplete: string;
 	inputType: string;
-	htmlFor: keyof T;
+	name: keyof T;
 	labelText: string;
-	validation: { required: boolean; pattern?: RegExp };
+	validation: RegisterOptions<T>;
 }
