@@ -19,6 +19,6 @@ export interface Field<T> {
 	autoComplete: string;
 	inputType: string;
 	name: keyof T;
-	labelText: string;
+	label: string;
 	validation: RegisterOptions<T>;
 }
