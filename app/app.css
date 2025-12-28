@@ -86,5 +86,5 @@ input:focus {
 	background: var(--color-blue-light);
 }
 .input-error {
-	@apply text-red-500 absolute -bottom-6 left-0;
+	@apply text-red-500 absolute w-full;
 }
