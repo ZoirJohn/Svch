@@ -1,4 +1,4 @@
-import type { FieldErrors, FieldValue, Path, RegisterOptions, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+import type { FieldErrors, Path, RegisterOptions, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
 
 export interface Feedback {
 	feedback: string;

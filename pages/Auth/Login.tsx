@@ -2,6 +2,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router";
 import type { LoginForm } from "shared/types";
 import { EMAIL_REGEX } from "shared/utils/validators";
+import { memo } from "react";
 import AuthOTPButton from "shared/ui/AuthOTPButton";
 import FormField from "shared/ui/FormField";
 
@@ -21,7 +22,7 @@ const FIELDS = {
 		autoComplete: "current-password" as const,
 		rules: {
 			required: "Please enter a password",
-			minLength: { value: 7, message: "Length of password should be at least 7" },
+			minLength: { value: 7, message: "Length should be at least 7" },
 		},
 	},
 } as const;
@@ -42,7 +43,7 @@ export default function Login() {
 				<h1 className="mb-4 text-4xl!">Login</h1>
 				{(Object.keys(FIELDS) as Array<keyof typeof FIELDS>).map((key) => {
 					const field = FIELDS[key];
-					return <FormField key={key} name={key} label={field.label} inputType={field.inputType} autoComplete={field.autoComplete} register={register} rules={field.rules} errors={errors} />;
+					return <FormField key={"login-" + key} name={key} label={field.label} inputType={field.inputType} autoComplete={field.autoComplete} register={register} rules={field.rules} errors={errors} />;
 				})}
 				<button type="submit" className="mb-8 ml-auto px-4 py-2 rounded-lg button-primary">
 					Login

@@ -1,7 +1,8 @@
-import { get, type FieldError, type FieldErrors, type FieldValues, type Path, type RegisterOptions, type UseFormRegister, type UseFormRegisterReturn } from "react-hook-form";
+import { memo, type ReactNode } from "react";
+import { get, type FieldError, type FieldValues } from "react-hook-form";
 import type { Field } from "shared/types";
 
-export default function FormField<T extends FieldValues>({ name, autoComplete, inputType, label, register, errors, rules }: Field<T>) {
+function FormField<T extends FieldValues>({ name, autoComplete, inputType, label, register, errors, rules }: Field<T>) {
 	const error = get(errors, name) as FieldError | undefined;
 	const field = register(name, rules);
 	return (
@@ -16,3 +17,5 @@ export default function FormField<T extends FieldValues>({ name, autoComplete, i
 		</label>
 	);
 }
+
+export default memo(FormField) as <T extends FieldValues>(props: Field<T>) => ReactNode;

@@ -1,13 +1,40 @@
+import { memo } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router";
-import type { Field, SignupForm } from "shared/types";
+import type { SignupForm } from "shared/types";
+import { EMAIL_REGEX, FULL_NAME_REGEX } from "shared/utils/validators";
 import AuthOTPButton from "shared/ui/AuthOTPButton";
+import FormField from "shared/ui/FormField";
 
-const FIELDS: Field<SignupForm>[] = [
-	{ autoComplete: "name", inputType: "text", name: "fullName", label: "Full name", validation: { required: "Full name is required" } },
-	{ autoComplete: "email", inputType: "email", name: "email", label: "Email", validation: { required: "Email is required" } },
-	{ autoComplete: "new-password", inputType: "password", name: "password", label: "Password", validation: { required: "Password is required" } },
-];
+const FIELDS = {
+	fullName: {
+		label: "Full name",
+		inputType: "text" as const,
+		autoComplete: "name" as const,
+		rules: {
+			required: "Please enter a full name",
+			pattern: { value: FULL_NAME_REGEX, message: "Firstname Lastname" },
+		},
+	},
+	email: {
+		label: "Email",
+		inputType: "email" as const,
+		autoComplete: "email" as const,
+		rules: {
+			required: "Please enter an email",
+			pattern: { value: EMAIL_REGEX, message: "example@email.com" },
+		},
+	},
+	password: {
+		label: "Password",
+		inputType: "password" as const,
+		autoComplete: "current-password" as const,
+		rules: {
+			required: "Please enter a password",
+			minLength: { value: 7, message: "Length should be at least 7" },
+		},
+	},
+} as const;
 
 export default function SignUp() {
 	const {
@@ -16,24 +43,15 @@ export default function SignUp() {
 		formState: { errors },
 	} = useForm<SignupForm>();
 	const onSubmit: SubmitHandler<SignupForm> = (data) => console.log(data);
+
 	return (
 		<main className="flex justify-center items-center shrink-0 grow">
 			<form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col items-center shadow [&>label]:mb-6 p-8 border border-blue-light rounded-lg [&>label]:w-full md:w-96">
 				<h1 className="mb-4 text-4xl!">Sign up</h1>
-				{FIELDS.map(({ autoComplete, inputType, name, label, validation }) => {
-					return (
-						<label htmlFor={name} className="bg-primary form-label relative" key={name}>
-							{label}
-							<input {...register(name, validation)} type={inputType} id={name} autoComplete={autoComplete} aria-describedby={`${name}Error`} aria-invalid={`${!!errors[name]}`} />
-							{errors[name] && (
-								<span className="input-error -bottom-6 left-0" id={`${name}Error`} role="alert">
-									{errors[name].message}
-								</span>
-							)}
-						</label>
-					);
+				{(Object.keys(FIELDS) as Array<keyof typeof FIELDS>).map((key) => {
+					const { autoComplete, inputType, label, rules } = FIELDS[key];
+					return <FormField autoComplete={autoComplete} errors={errors} inputType={inputType} label={label} register={register} name={key} key={"signup-" + key} rules={rules} />;
 				})}
-
 				<button type="submit" className="mb-8 ml-auto px-4 py-2 rounded-lg button-primary">
 					Sign up
 				</button>
@@ -45,4 +63,4 @@ export default function SignUp() {
 			</form>
 		</main>
 	);
-}
+};
