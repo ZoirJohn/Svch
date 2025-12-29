@@ -1,7 +1,7 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router";
 import type { Field, SignupForm } from "shared/types";
-import AuthOTPButton from "widgets/AuthOTPButton";
+import AuthOTPButton from "shared/ui/AuthOTPButton";
 
 const FIELDS: Field<SignupForm>[] = [
 	{ autoComplete: "name", inputType: "text", name: "fullName", label: "Full name", validation: { required: "Full name is required" } },

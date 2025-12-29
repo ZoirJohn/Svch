@@ -1,9 +1,9 @@
 import type { Feedback } from "shared/types";
 import FeedbackCard from "./FeedbackCard";
 
-export default function Feedback() {
-	const feedbacks: Feedback[] = [{ feedback: "Be the first ones to be here", authors: ["Sincerely, Svch Team"], img: "" }];
+const feedbacks: Feedback[] = [{ feedback: "Be the first ones to be here", authors: ["Sincerely, Svch Team"], img: "" }];
 
+export default function Feedback() {
 	return (
 		<section>
 			<div className={"container flex flex-wrap " + (feedbacks.length > 1 ? "justify-between" : "justify-center")}>
@@ -11,12 +11,7 @@ export default function Feedback() {
 					What do our <span className="text-blue-dark">Happy Users</span> say?
 				</h2>
 				{feedbacks.map(({ authors, feedback, img }) => (
-					<FeedbackCard
-						authors={authors}
-						feedback={feedback}
-						img={img}
-						key={img + new Date().getMilliseconds()}
-					/>
+					<FeedbackCard authors={authors} feedback={feedback} img={img} key={img + new Date().getMilliseconds()} />
 				))}
 			</div>
 		</section>

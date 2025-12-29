@@ -1,8 +1,8 @@
-import Feedback from "widgets/Feedback";
+import Feedback from "shared/ui/Feedback";
 import Footer from "widgets/Footer";
 import Header from "widgets/Header";
-import Hero from "widgets/Hero";
-import ProductExplanation from "widgets/ProductExplanation";
+import Hero from "shared/ui/Hero";
+import ProductExplanation from "shared/ui/ProductExplanation";
 
 export default function Home() {
 	return (

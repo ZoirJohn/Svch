@@ -1,4 +1,4 @@
-import type { FieldErrors, RegisterOptions, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+import type { FieldErrors, FieldValue, Path, RegisterOptions, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
 
 export interface Feedback {
 	feedback: string;
@@ -6,7 +6,6 @@ export interface Feedback {
 	authors: string[];
 }
 export interface LoginForm {
-	fullName: string;
 	email: string;
 	password: string;
 }
@@ -15,10 +14,12 @@ export interface SignupForm {
 	email: string;
 	password: string;
 }
-export interface Field<T> {
-	autoComplete: string;
-	inputType: string;
-	name: keyof T;
+export interface Field<T extends FieldValues> {
+	autoComplete: React.HTMLInputAutoCompleteAttribute;
+	inputType: React.HTMLInputTypeAttribute;
+	name: Path<T>;
 	label: string;
-	validation: RegisterOptions<T>;
+	rules?: RegisterOptions<T, Path<T>>;
+	errors: FieldErrors<T>;
+	register: UseFormRegister<T>;
 }
