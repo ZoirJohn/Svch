@@ -1,7 +1,6 @@
-import { memo } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router";
-import type { SignupForm } from "shared/types";
+import type { Field, SignupForm } from "shared/types";
 import { EMAIL_REGEX, FULL_NAME_REGEX } from "shared/utils/validators";
 import AuthOTPButton from "shared/ui/AuthOTPButton";
 import FormField from "shared/ui/FormField";
@@ -28,7 +27,7 @@ const FIELDS = {
 	password: {
 		label: "Password",
 		inputType: "password" as const,
-		autoComplete: "current-password" as const,
+		autoComplete: "new-password" as const,
 		rules: {
 			required: "Please enter a password",
 			minLength: { value: 7, message: "Length should be at least 7" },
@@ -46,7 +45,7 @@ export default function SignUp() {
 
 	return (
 		<main className="flex justify-center items-center shrink-0 grow">
-			<form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col items-center shadow [&>label]:mb-6 p-8 border border-blue-light rounded-lg [&>label]:w-full md:w-96">
+			<form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col items-center shadow [&>label]:mb-6 p-8 border border-blue-light rounded-lg [&>label]:w-full md:w-96 bg-white">
 				<h1 className="mb-4 text-4xl!">Sign up</h1>
 				{(Object.keys(FIELDS) as Array<keyof typeof FIELDS>).map((key) => {
 					const { autoComplete, inputType, label, rules } = FIELDS[key];
@@ -63,4 +62,4 @@ export default function SignUp() {
 			</form>
 		</main>
 	);
-};
+}

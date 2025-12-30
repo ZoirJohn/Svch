@@ -2,7 +2,6 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router";
 import type { LoginForm } from "shared/types";
 import { EMAIL_REGEX } from "shared/utils/validators";
-import { memo } from "react";
 import AuthOTPButton from "shared/ui/AuthOTPButton";
 import FormField from "shared/ui/FormField";
 
@@ -39,7 +38,7 @@ export default function Login() {
 
 	return (
 		<main className="flex justify-center items-center shrink-0 grow">
-			<form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col items-center shadow [&>label]:mb-6 p-8 border border-blue-light rounded-lg [&>label]:w-full md:w-96">
+			<form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col items-center shadow [&>label]:mb-6 p-8 border border-blue-light rounded-lg [&>label]:w-full md:w-96 bg-white">
 				<h1 className="mb-4 text-4xl!">Login</h1>
 				{(Object.keys(FIELDS) as Array<keyof typeof FIELDS>).map((key) => {
 					const field = FIELDS[key];

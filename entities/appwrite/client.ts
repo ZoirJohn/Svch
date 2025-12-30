@@ -1,5 +1,5 @@
 import { Client, Account, OAuthProvider, ID } from "appwrite";
-import type { EmailAndPasswordFormType } from "shared/types";
+import type { LoginForm, SignupForm } from "shared/types";
 
 export const client = new Client();
 
@@ -14,7 +14,7 @@ export const signUpWithGoogle = () =>
 		failure: "http://localhost:5173/error",
 	});
 
-export const signUpWithEmailPassword = ({ email, password, full_name: name }: EmailAndPasswordFormType) =>
+export const signUpWithEmailPassword = ({ email, password, fullName: name }: SignupForm) =>
 	account.create({
 		email,
 		userId: ID.unique(),
@@ -22,12 +22,8 @@ export const signUpWithEmailPassword = ({ email, password, full_name: name }: Em
 		name,
 	});
 
-export const signInWithEmailPassword = ({ email, password }: EmailAndPasswordFormType) =>
+export const signInWithEmailPassword = ({ email, password }: LoginForm) =>
 	account.createEmailPasswordSession({
 		email,
 		password,
 	});
-// export const getSession = await account.getSession({
-// 	sessionId: "current",
-// });
-// console.log(getSession);
