@@ -44,7 +44,7 @@ export default function SignUp() {
 	const onSubmit: SubmitHandler<SignupForm> = (data) => console.log(data);
 
 	return (
-		<main className="flex justify-center items-center shrink-0 grow">
+		<main className="main justify-center items-center">
 			<form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col items-center shadow [&>label]:mb-6 p-8 border border-blue-light rounded-lg [&>label]:w-full md:w-96 bg-white">
 				<h1 className="mb-4 text-4xl!">Sign up</h1>
 				{(Object.keys(FIELDS) as Array<keyof typeof FIELDS>).map((key) => {

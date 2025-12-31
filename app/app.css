@@ -88,3 +88,6 @@ input:focus {
 .input-error {
 	@apply text-red-500 absolute w-full;
 }
+.main {
+	@apply flex shrink-0 grow;
+}

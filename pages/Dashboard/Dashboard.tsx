@@ -1,3 +1,9 @@
+import Sidebar from "widgets/Sidebar";
+
 export default function Dashboard() {
-	return <main></main>
+	return (
+		<main className="main">
+			<Sidebar />
+		</main>
+	);
 }
