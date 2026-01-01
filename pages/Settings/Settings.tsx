@@ -1,3 +1,3 @@
 export default function Settings() {
-	return <section></section>;
+	return <section>Settings</section>;
 }

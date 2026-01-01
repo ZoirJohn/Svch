@@ -1,3 +1,3 @@
 export default function Matches() {
-	return <section></section>;
+	return <section>Matches</section>;
 }
