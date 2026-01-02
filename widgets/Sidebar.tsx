@@ -1,19 +1,17 @@
-import { NavLink } from "react-router";
+import NavigationLink from "shared/ui/NavLink";
 
 export default function Sidebar() {
 	return (
-		<aside>
+		<aside className="basis-70 p-2">
+			<div>
+				<img src="/shared/icons/logo-light.svg" alt="Logo" className="block" />
+			</div>
 			<nav>
 				<ul>
-					<li>
-						<NavLink to="/dashboard/matches">Matches</NavLink>
-					</li>
-					<li>
-						<NavLink to="/dashboard/profile">Profile</NavLink>
-					</li>
-					<li>
-						<NavLink to="/dashboard/settings">Settings</NavLink>
-					</li>
+					<NavigationLink to="/dashboard/matches">Matches</NavigationLink>
+					<NavigationLink to="/dashboard/messages">Messages</NavigationLink>
+					<NavigationLink to="/dashboard/profile">Profile</NavigationLink>
+					<NavigationLink to="/dashboard/settings">Settings</NavigationLink>
 				</ul>
 			</nav>
 		</aside>

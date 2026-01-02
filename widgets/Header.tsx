@@ -6,7 +6,7 @@ export default function Header() {
 			<div className="container component">
 				<Link to={"/"}>
 					<img
-						src="shared/icons/logo-light.svg"
+						src="/shared/icons/logo-light.svg"
 						alt="Logo"
 						loading="eager"
 					/>

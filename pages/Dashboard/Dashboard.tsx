@@ -5,7 +5,9 @@ export default function Dashboard() {
 	return (
 		<main className="main">
 			<Sidebar />
-			<Outlet />
+			<section className="grow p-4">
+				<Outlet />
+			</section>
 		</main>
 	);
 }
