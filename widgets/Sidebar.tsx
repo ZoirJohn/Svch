@@ -1,17 +1,46 @@
+import { useState, type JSX, type ReactNode } from "react";
 import NavigationLink from "shared/ui/NavLink";
 
+export type NavigationText = "Matches" | "Messages" | "Profile" | "Settings";
+export type NavigationLink = Lowercase<NavigationText>;
+export type NavigationLinkType = { text: NavigationText; icon: JSX.Element; link: NavigationLink };
+
+const NavigationLinks: NavigationLinkType[] = [
+	{
+		text: "Matches",
+		icon: <path d="M378.9 80c-27.3 0-53 13.1-69 35.2l-34.4 47.6c-4.5 6.2-11.7 9.9-19.4 9.9s-14.9-3.7-19.4-9.9l-34.4-47.6c-16-22.1-41.7-35.2-69-35.2-47 0-85.1 38.1-85.1 85.1 0 49.9 32 98.4 68.1 142.3 41.1 50 91.4 94 125.9 120.3 3.2 2.4 7.9 4.2 14 4.2s10.8-1.8 14-4.2c34.5-26.3 84.8-70.4 125.9-120.3 36.2-43.9 68.1-92.4 68.1-142.3 0-47-38.1-85.1-85.1-85.1zM271 87.1c25-34.6 65.2-55.1 107.9-55.1 73.5 0 133.1 59.6 133.1 133.1 0 68.6-42.9 128.9-79.1 172.8-44.1 53.6-97.3 100.1-133.8 127.9-12.3 9.4-27.5 14.1-43.1 14.1s-30.8-4.7-43.1-14.1C176.4 438 123.2 391.5 79.1 338 42.9 294.1 0 233.7 0 165.1 0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1l15 20.7 15-20.7z" />,
+		link: "matches",
+	},
+	{
+		text: "Messages",
+		icon: <path d="M51.9 384.9C19.3 344.6 0 294.4 0 240 0 107.5 114.6 0 256 0S512 107.5 512 240 397.4 480 256 480c-36.5 0-71.2-7.2-102.6-20L37 509.9c-3.7 1.6-7.5 2.1-11.5 2.1-14.1 0-25.5-11.4-25.5-25.5 0-4.3 1.1-8.5 3.1-12.2l48.8-89.4zm37.3-30.2c12.2 15.1 14.1 36.1 4.8 53.2l-18 33.1 58.5-25.1c11.8-5.1 25.2-5.2 37.1-.3 25.7 10.5 54.2 16.4 84.3 16.4 117.8 0 208-88.8 208-192S373.8 48 256 48 48 136.8 48 240c0 42.8 15.1 82.4 41.2 114.7z" />,
+		link: "messages",
+	},
+	{
+		text: "Profile",
+		icon: <path d="M144 128a80 80 0 1 1 160 0 80 80 0 1 1 -160 0zm208 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0zM48 480c0-70.7 57.3-128 128-128l96 0c70.7 0 128 57.3 128 128l0 8c0 13.3 10.7 24 24 24s24-10.7 24-24l0-8c0-97.2-78.8-176-176-176l-96 0C78.8 304 0 382.8 0 480l0 8c0 13.3 10.7 24 24 24s24-10.7 24-24l0-8z" />,
+		link: "profile",
+	},
+	{
+		text: "Settings",
+		icon: <path d="M195.1 9.5C198.1-5.3 211.2-16 226.4-16l59.8 0c15.2 0 28.3 10.7 31.3 25.5L332 79.5c14.1 6 27.3 13.7 39.3 22.8l67.8-22.5c14.4-4.8 30.2 1.2 37.8 14.4l29.9 51.8c7.6 13.2 4.9 29.8-6.5 39.9L447 233.3c.9 7.4 1.3 15 1.3 22.7s-.5 15.3-1.3 22.7l53.4 47.5c11.4 10.1 14 26.8 6.5 39.9l-29.9 51.8c-7.6 13.1-23.4 19.2-37.8 14.4l-67.8-22.5c-12.1 9.1-25.3 16.7-39.3 22.8l-14.4 69.9c-3.1 14.9-16.2 25.5-31.3 25.5l-59.8 0c-15.2 0-28.3-10.7-31.3-25.5l-14.4-69.9c-14.1-6-27.2-13.7-39.3-22.8L73.5 432.3c-14.4 4.8-30.2-1.2-37.8-14.4L5.8 366.1c-7.6-13.2-4.9-29.8 6.5-39.9l53.4-47.5c-.9-7.4-1.3-15-1.3-22.7s.5-15.3 1.3-22.7L12.3 185.8c-11.4-10.1-14-26.8-6.5-39.9L35.7 94.1c7.6-13.2 23.4-19.2 37.8-14.4l67.8 22.5c12.1-9.1 25.3-16.7 39.3-22.8L195.1 9.5zM256.3 336a80 80 0 1 0 -.6-160 80 80 0 1 0 .6 160z" />,
+		link: "settings",
+	},
+];
+
 export default function Sidebar() {
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+
 	return (
-		<aside className="basis-70 p-2">
-			<div>
-				<img src="/shared/icons/logo-light.svg" alt="Logo" className="block" />
+		<aside className={"overflow-hidden px-2 py-4" + " " + (isOpen ? "basis-70" : "basis-16")}>
+			<div className="mb-8">
+				<img src="/shared/icons/logo-light.svg" alt="Logo" className={"block" + " " + (isOpen ? "pl-3" : "mx-auto")} />
 			</div>
 			<nav>
 				<ul>
-					<NavigationLink to="/dashboard/matches">Matches</NavigationLink>
-					<NavigationLink to="/dashboard/messages">Messages</NavigationLink>
-					<NavigationLink to="/dashboard/profile">Profile</NavigationLink>
-					<NavigationLink to="/dashboard/settings">Settings</NavigationLink>
+					{NavigationLinks.map((link) => (
+						<NavigationLink {...link} isOpen={isOpen} />
+					))}
 				</ul>
 			</nav>
 		</aside>
