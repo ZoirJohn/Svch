@@ -6,8 +6,9 @@ export default [
 	route("/auth/sign-up", "../pages/Auth/Signup.tsx"),
 	// Dashboard
 	route("/dashboard", "../pages/Dashboard/Dashboard.tsx", [
-		index('../pages/Dashboard/index.tsx'),
+		index("../pages/Dashboard/index.tsx"),
 		route("matches", "../pages/Matches/Matches.tsx"), //
+		route("messages", "../pages/Messages/Messages.tsx"), //
 		route("profile", "../pages/Profile/Profile.tsx"), //
 		route("settings", "../pages/Settings/Settings.tsx"),
 	]),

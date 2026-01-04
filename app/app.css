@@ -25,7 +25,7 @@ body {
 	font-family: "Caslon";
 }
 .container {
-	@apply md:max-w-6xl mx-auto xxs:max-w-screen;
+	@apply xl:max-w-7xl md:max-w-6xl mx-auto xxs:max-w-screen;
 }
 h1 {
 	@apply text-7xl;
