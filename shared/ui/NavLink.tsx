@@ -1,8 +1,8 @@
 import { NavLink } from "react-router";
 import type { NavigationLinkType } from "widgets/Sidebar";
 
-export default function NavigationLink({ icon, text, link, isOpen }: NavigationLinkType & { isOpen: boolean }) {
-	const activeStyle = ({ isActive }: { isActive: boolean }) => (isActive ? "bg-blue-dark dark:bg-blue-light" : "bg-blue-light dark:bg-white") + " text-lg block p-3 rounded-xl flex items-center" + " " + (isOpen ? "gap-x-4" : "gap-x-6");
+export default function NavigationLink({ icon, text, link }: NavigationLinkType) {
+	const activeStyle = ({ isActive }: { isActive: boolean }) => (isActive ? "bg-blue-dark dark:bg-blue-light" : "bg-blue-light dark:bg-white") + " text-lg block p-3 rounded-xl flex items-center gap-x-4";
 
 	return (
 		<li>
@@ -11,7 +11,7 @@ export default function NavigationLink({ icon, text, link, isOpen }: NavigationL
 					{icon}
 				</svg>
 
-				<span className={"leading-6 transition-all" + " " + (isOpen ? "" : "invisible opacity-0")}>{text}</span>
+				<span className={"leading-6 max-md:invisible max-md:opacity-0 "}>{text}</span>
 			</NavLink>
 		</li>
 	);

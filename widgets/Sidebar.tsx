@@ -29,17 +29,15 @@ const NavigationLinks: NavigationLinkType[] = [
 ];
 
 export default function Sidebar() {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-
 	return (
-		<aside className={"overflow-hidden px-2 py-4" + " " + (isOpen ? "basis-70" : "basis-16")}>
+		<aside className={"overflow-hidden px-2 py-4 flex flex-col md:basis-70 basis-16"}>
 			<div className="mb-8">
-				<img src="/shared/icons/logo-light.svg" alt="Logo" className={"block" + " " + (isOpen ? "pl-3" : "mx-auto")} />
+				<img src="/shared/icons/logo-light.svg" alt="Logo" className="block pl-2" />
 			</div>
 			<nav>
 				<ul>
 					{NavigationLinks.map((link) => (
-						<NavigationLink {...link} isOpen={isOpen} />
+						<NavigationLink {...link} />
 					))}
 				</ul>
 			</nav>
