@@ -2,7 +2,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { Link } from "react-router";
 import type { Field, SignupForm } from "shared/types";
 import { EMAIL_REGEX, FULL_NAME_REGEX } from "shared/utils/validators";
-import AuthOTPButton from "shared/ui/AuthOTPButton";
+import AuthOTPButton from "widgets/AuthOTPButton";
 import FormField from "shared/ui/FormField";
 
 const FIELDS = {

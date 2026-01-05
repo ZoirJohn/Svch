@@ -23,3 +23,9 @@ export interface Field<T extends FieldValues> {
 	errors: FieldErrors<T>;
 	register: UseFormRegister<T>;
 }
+export interface Profile {
+	fullName: string;
+	location: string;
+	age: number;
+	img: string;
+}

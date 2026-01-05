@@ -1,4 +1,5 @@
 import { useState, type JSX, type ReactNode } from "react";
+import { Link } from "react-router";
 import NavigationLink from "shared/ui/NavLink";
 
 export type NavigationText = "Matches" | "Messages" | "Profile" | "Settings";
@@ -30,10 +31,10 @@ const NavigationLinks: NavigationLinkType[] = [
 
 export default function Sidebar() {
 	return (
-		<aside className={"overflow-hidden px-2 py-4 flex flex-col xl:basis-60 md:basis-50 basis-16"}>
-			<div className="mb-8">
+		<aside className={"overflow-hidden px-2 py-4 flex flex-col xl:basis-60 md:basis-50 basis-16 shrink-0"}>
+			<Link to="/" className="mb-8">
 				<img src="/shared/icons/logo-light.svg" alt="Logo" className="block pl-2" />
-			</div>
+			</Link>
 			<nav>
 				<ul>
 					{NavigationLinks.map((link) => (
