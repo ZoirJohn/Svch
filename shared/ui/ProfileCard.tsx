@@ -1,14 +1,15 @@
+import { Link } from "react-router";
 import type { Profile } from "shared/types";
 
 export default function ProfileCard(props: Profile) {
 	const { fullName, age, img, location } = props;
 	return (
-		<div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-80 min-h-100">
+		<div className="group bg-white shadow-lg rounded-2xl max-w-80 min-h-100 overflow-hidden">
 			<div>
 				<img src={img} alt="Profile picture" className="block" />
 			</div>
-			<div className="p-2">
-				<h5 className="text-2xl">{fullName}</h5>
+			<div className="mb-2 px-2">
+				<h5 className="mb-2 text-2xl">{fullName}</h5>
 				<p>
 					<span className="flex gap-x-2">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4">
@@ -23,6 +24,14 @@ export default function ProfileCard(props: Profile) {
 						{age}
 					</span>
 				</p>
+			</div>
+
+			<div className="px-2">
+				<Link to='/dashboard/messages'>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="opacity-0 group-hover:opacity-100 fill-blue-dark w-12 transition duration-300">
+						<path d="M51.9 384.9C19.3 344.6 0 294.4 0 240 0 107.5 114.6 0 256 0S512 107.5 512 240 397.4 480 256 480c-36.5 0-71.2-7.2-102.6-20L37 509.9c-3.7 1.6-7.5 2.1-11.5 2.1-14.1 0-25.5-11.4-25.5-25.5 0-4.3 1.1-8.5 3.1-12.2l48.8-89.4zm37.3-30.2c12.2 15.1 14.1 36.1 4.8 53.2l-18 33.1 58.5-25.1c11.8-5.1 25.2-5.2 37.1-.3 25.7 10.5 54.2 16.4 84.3 16.4 117.8 0 208-88.8 208-192S373.8 48 256 48 48 136.8 48 240c0 42.8 15.1 82.4 41.2 114.7z" />
+					</svg>
+				</Link>
 			</div>
 		</div>
 	);
