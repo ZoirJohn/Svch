@@ -6,9 +6,7 @@ export default function Dashboard() {
 		<main className="main mx-auto w-full">
 			<div className="container flex">
 				<Sidebar />
-				<section className="grow p-4">
-					<Outlet />
-				</section>
+				<Outlet/>
 			</div>
 		</main>
 	);
