@@ -2,9 +2,9 @@ import type { ReactNode } from "react";
 import { Link } from "react-router";
 
 export default function CardButton({ link, type, children }: { link: string; type: "primary" | "secondary"; children: ReactNode }) {
-	const style = type == "primary" ? "flex gap-x-2 bg-blue-dark px-2 py-1 rounded-lg text-white text-lg basis-1/2 grow-0" : "flex gap-x-2 bg-blue-light px-2 py-1 rounded-lg text-lg basis-1/2 grow-0";
+	const style = type == "primary" ? " bg-blue-light basis-3/4 hover:bg-blue-light/80" : " bg-blue-dark text-white grow hover:bg-red-900 transition";
 	return (
-		<Link to={link} className={style}>
+		<Link to={link} className={"flex gap-x-2 px-2 py-3 rounded-lg text-2xl justify-center duration-300" + style}>
 			{children}
 		</Link>
 	);
