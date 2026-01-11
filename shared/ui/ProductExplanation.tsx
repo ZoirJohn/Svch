@@ -27,7 +27,7 @@ export default function ProductExplanation() {
 			reverse: true,
 		},
 		{
-			img: "shared/img/meet.avif",
+			img: "shared/img/meet1.png",
 			alt: "dating",
 			title: "Meet With Confidence",
 			description: "When both sides agree, Sovchi guides the first steps toward meeting — safe, clear, and focused on building something real.",
@@ -41,7 +41,7 @@ export default function ProductExplanation() {
 				</h2>
 				{actions.map(({ img, alt, title, description, reverse }) => (
 					<div className={"flex items-center justify-center xl:gap-8 gap-4 flex-col" + (reverse ? " md:flex-row-reverse" : " md:flex-row")} key={img + "-" + Math.random()}>
-						<img src={img} alt={alt} className="w-100" loading="lazy" />
+						<img src={img} alt={alt} className="w-100 " loading="lazy" />
 						<div className="flex flex-col gap-4 xl:max-w-125 max-w-100">
 							<h3 className="text-blue-dark ">{title}</h3>
 							<p className="text-xl">{description}</p>

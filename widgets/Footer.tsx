@@ -1,6 +1,6 @@
 export default function Footer() {
 	return (
-		<footer className="mt-20 px-3">
+		<footer className="md:mt-20 mt-5 px-3">
 			<div className="justify-center! container component">
 				<p className="text-center">Svch 2025 ©</p>
 			</div>

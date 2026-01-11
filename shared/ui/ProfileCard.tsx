@@ -2,8 +2,7 @@ import type { Profile } from "shared/types";
 import CardButton from "./CardButton";
 
 export default function ProfileCard(props: Profile) {
-	const { fullName, age, img, location } = props;
-	const bio = ["Dog dad", "Hiker", "Always cold"];
+	const { fullName, age, img, location, bio } = props;
 	return (
 		<>
 			<div className="group relative flex shadow-xl rounded-2xl w-full max-w-120 min-h-160 overflow-hidden">

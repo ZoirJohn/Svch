@@ -28,4 +28,5 @@ export interface Profile {
 	location: string;
 	age: number;
 	img: string;
+	bio: string[];
 }

@@ -29,12 +29,25 @@ body {
 }
 h1 {
 	@apply text-7xl;
+	@media (max-width: 768px) {
+		@apply text-6xl;
+	}
 }
 h2 {
 	@apply text-6xl;
+	@media (max-width: 768px) {
+		& {
+			@apply text-5xl;
+		}
+	}
 }
 h3 {
 	@apply text-5xl;
+	@media (max-width: 768px) {
+		& {
+			@apply text-4xl;
+		}
+	}
 }
 h4 {
 	@apply text-4xl;

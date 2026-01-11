@@ -8,7 +8,8 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<main className="shrink-0 grow px-3">
+			<main className="px-3 shrink-0 grow gap-y-4 flex flex-col">
+				<h1 className="sr-only">Sovchi - Find your person</h1>
 				<Hero />
 				<ProductExplanation />
 				<Feedback />

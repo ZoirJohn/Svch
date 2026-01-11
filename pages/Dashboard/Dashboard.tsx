@@ -6,6 +6,7 @@ export default function Dashboard() {
 		<main className="main mx-auto w-full">
 			<div className="container flex">
 				<Sidebar />
+				
 				<Outlet/>
 			</div>
 		</main>
