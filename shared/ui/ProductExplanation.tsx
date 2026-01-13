@@ -41,9 +41,9 @@ export default function ProductExplanation() {
 				</h2>
 				{actions.map(({ img, alt, title, description, reverse }) => (
 					<div className={"flex items-center justify-center xl:gap-8 lg:gap-4 flex-col" + (reverse ? " md:flex-row-reverse" : " md:flex-row")} key={img + "-" + Math.random()}>
-						<img src={img} alt={alt} className="w-100 " loading="lazy" />
-						<div className="flex flex-col gap-4 xl:max-w-125 max-w-100">
-							<h3 className="text-blue-dark ">{title}</h3>
+						<img src={img} alt={alt} className="w-100" loading="lazy" />
+						<div className="flex flex-col md:gap-4 max-w-100 xl:max-w-125">
+							<h3 className="text-blue-dark">{title}</h3>
 							<p className="text-xl">{description}</p>
 						</div>
 					</div>
