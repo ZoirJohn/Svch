@@ -1,5 +1,5 @@
 import { Navigate } from "react-router";
 
 export default function Index() {
-	return <Navigate to="/dashboard/matches" />;
+	return <Navigate to="/dashboard/matches" replace />;
 }

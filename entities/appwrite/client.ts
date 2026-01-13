@@ -1,4 +1,5 @@
-import { Client, Account, OAuthProvider, ID } from "appwrite";
+import { Client, Account, OAuthProvider, ID, type Models } from "appwrite";
+import { createContext, useState } from "react";
 import type { LoginForm, SignupForm } from "shared/types";
 
 export const client = new Client();
@@ -27,3 +28,19 @@ export const signInWithEmailPassword = ({ email, password }: LoginForm) =>
 		email,
 		password,
 	});
+
+export const UserContext = createContext<{
+	user: Models.User<Models.Preferences> | null;
+	loading: boolean;
+}>({ user: null, loading: true });
+
+export const useUser = () => {
+	const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null);
+	const [loading, setLoading] = useState<boolean>(true);
+	account
+		.get()
+		.then(setUser)
+		.catch(() => setUser(null))
+		.finally(() => setLoading(false));
+	return { user, loading };
+};
