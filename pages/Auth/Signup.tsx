@@ -1,9 +1,11 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 import type { Field, SignupForm } from "shared/types";
 import { EMAIL_REGEX, FULL_NAME_REGEX } from "shared/utils/validators";
 import AuthOTPButton from "widgets/AuthOTPButton";
 import FormField from "shared/ui/FormField";
+import { useContext } from "react";
+import { UserContext } from "entities/appwrite/client";
 
 const FIELDS = {
 	fullName: {
@@ -36,6 +38,10 @@ const FIELDS = {
 } as const;
 
 export default function SignUp() {
+	const { user, loading } = useContext(UserContext);
+	if (loading) return <></>;
+	if (user) return <Navigate replace to={"/dashboard"} />;
+
 	const {
 		register,
 		handleSubmit,
