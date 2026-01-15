@@ -37,6 +37,8 @@ export const UserContext = createContext<{
 export const useUser = () => {
 	const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null);
 	const [loading, setLoading] = useState<boolean>(true);
+
+	
 	useEffect(() => {
 		account
 			.get()
