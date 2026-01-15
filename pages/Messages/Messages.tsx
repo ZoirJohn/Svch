@@ -1,19 +1,17 @@
 import { useForm } from "react-hook-form";
-import Message from "shared/ui/Message";
 
 export default function Messages() {
 	const form = useForm({});
 	return (
 		<section className="flex justify-center items-center p-4 w-full max-h-screen overflow-hidden">
 			<div className="flex flex-col justify-end h-full basis-full">
-				<div className="flex gap-x-4 items-center">
-					<img src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Profile photo" className="size-24 object-cover rounded-full" />
-					<h4>Bulbul</h4>
+				<div className="flex items-center gap-x-4">
+					<img src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Profile photo" className="rounded-full sm:size-24 size-12 object-cover" />
+					<h4 className="text-2xl!">Bulbul</h4>
 				</div>
-				<ul className="[&::-webkit-scrollbar]:hidden flex flex-col items-start gap-y-2 py-2 overflow-scroll [scrollbar-width:none] grow">
-				</ul>
-				<form action="#" className="flex items-center gap-x-2 shrink-0">
-					<textarea name="" id="" className="[&::-webkit-scrollbar]:hidden px-2 py-1 border border-blue-dark rounded-xl focus:outline-0 min-h-22 text-xl resize-none grow"></textarea>
+				<ul className="[&::-webkit-scrollbar]:hidden flex flex-col items-start gap-y-2 py-2 overflow-scroll [scrollbar-width:none] grow"></ul>
+				<form action="#" className="flex items-center gap-2 shrink-0 max-sm:flex-col max-sm:items-end">
+					<textarea name="" id="" className="[&::-webkit-scrollbar]:hidden px-2 py-1 border border-blue-dark rounded-xl focus:outline-0 min-h-22 text-xl resize-none grow w-full"></textarea>
 					<button className="flex items-center gap-x-2 bg-black px-6 py-2 rounded-3xl text-white">
 						Send
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" className="fill-white size-5">
