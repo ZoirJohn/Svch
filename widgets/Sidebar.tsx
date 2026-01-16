@@ -1,3 +1,4 @@
+import { signOut } from "entities/utils/signOut";
 import { useState, type JSX, type ReactNode } from "react";
 import { Link } from "react-router";
 import NavigationLink from "shared/ui/NavLink";
@@ -42,6 +43,7 @@ export default function Sidebar() {
 					))}
 				</ul>
 			</nav>
+			<button onClick={signOut}>Sign out</button>
 		</aside>
 	);
 }

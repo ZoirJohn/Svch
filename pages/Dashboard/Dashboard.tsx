@@ -1,4 +1,4 @@
-import { account, UserContext } from "entities/appwrite/client";
+import { UserContext } from "entities/contexts/UserContext";
 import { useContext, useEffect } from "react";
 import { Navigate, Outlet } from "react-router";
 import Sidebar from "widgets/Sidebar";

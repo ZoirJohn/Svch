@@ -4,8 +4,8 @@ import type { LoginForm } from "shared/types";
 import { EMAIL_REGEX } from "shared/utils/validators";
 import AuthOTPButton from "widgets/AuthOTPButton";
 import FormField from "shared/ui/FormField";
-import { UserContext } from "entities/appwrite/client";
 import { useContext } from "react";
+import { UserContext } from "entities/contexts/UserContext";
 
 const FIELDS = {
 	email: {

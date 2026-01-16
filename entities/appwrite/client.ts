@@ -1,5 +1,4 @@
-import { Client, Account, OAuthProvider, ID, type Models } from "appwrite";
-import { createContext, useEffect, useState } from "react";
+import { Client, Account, OAuthProvider, ID, type Models, Databases, TablesDB } from "appwrite";
 import type { LoginForm, SignupForm } from "shared/types";
 
 export const client = new Client();
@@ -7,7 +6,7 @@ export const client = new Client();
 client.setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT).setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID);
 
 export const account = new Account(client);
-
+export const tables = new TablesDB(client);
 export const signUpWithGoogle = () =>
 	account.createOAuth2Session({
 		provider: OAuthProvider.Google,
@@ -28,24 +27,3 @@ export const signInWithEmailPassword = ({ email, password }: LoginForm) =>
 		email,
 		password,
 	});
-
-export const UserContext = createContext<{
-	user: Models.User<Models.Preferences> | null;
-	loading: boolean;
-}>({ user: null, loading: true });
-
-export const useUser = () => {
-	const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null);
-	const [loading, setLoading] = useState<boolean>(true);
-
-	
-	useEffect(() => {
-		account
-			.get()
-			.then(setUser)
-			.catch(() => setUser(null))
-			.finally(() => setLoading(false));
-	}, []);
-
-	return { user, loading };
-};

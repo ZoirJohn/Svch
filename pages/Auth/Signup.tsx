@@ -5,7 +5,7 @@ import { EMAIL_REGEX, FULL_NAME_REGEX } from "shared/utils/validators";
 import AuthOTPButton from "widgets/AuthOTPButton";
 import FormField from "shared/ui/FormField";
 import { useContext } from "react";
-import { UserContext } from "entities/appwrite/client";
+import { UserContext } from "entities/contexts/UserContext";
 
 const FIELDS = {
 	fullName: {
