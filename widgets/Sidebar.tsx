@@ -1,9 +1,9 @@
 import { UserContext } from "entities/contexts/UserContext";
-import { useUser } from "entities/hooks/useUser";
 import { signOut } from "entities/utils/signOut";
 import { useContext, useState, type JSX, type ReactNode } from "react";
 import { Link, Navigate, useNavigate } from "react-router";
 import NavigationLink from "shared/ui/NavLink";
+import logoLightImg from "../shared/icons/logo-light.svg";
 
 export type NavigationText = "Matches" | "Messages" | "Profile" | "Settings";
 export type NavigationLink = Lowercase<NavigationText>;
@@ -44,7 +44,7 @@ export default function Sidebar() {
 	return (
 		<aside className={"overflow-hidden px-2 py-4 flex flex-col xl:basis-60 md:basis-50 basis-16 shrink-0"}>
 			<Link to="/" className="mb-8">
-				<img src="/shared/icons/logo-light.svg" alt="Logo" className="block pl-2" />
+				<img src={logoLightImg} alt="Logo" className="block pl-2" />
 			</Link>
 			<nav>
 				<ul>
