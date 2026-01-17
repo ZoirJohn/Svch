@@ -5,7 +5,7 @@ export default function Header() {
 		<header className="mt-3 px-3">
 			<div className="container component">
 				<Link to={"/"}>
-					<img src="/shared/icons/logo-light.svg" alt="Logo" loading="eager" />
+					<img src="../shared/icons/logo-light.svg" alt="Logo" loading="eager" />
 				</Link>
 				<div>
 					<Link to={"/auth/sign-up"} className="nav-button group">
