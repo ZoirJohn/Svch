@@ -1,6 +1,8 @@
+import { UserContext } from "entities/contexts/UserContext";
+import { useUser } from "entities/hooks/useUser";
 import { signOut } from "entities/utils/signOut";
-import { useState, type JSX, type ReactNode } from "react";
-import { Link } from "react-router";
+import { useContext, useState, type JSX, type ReactNode } from "react";
+import { Link, Navigate, useNavigate } from "react-router";
 import NavigationLink from "shared/ui/NavLink";
 
 export type NavigationText = "Matches" | "Messages" | "Profile" | "Settings";
@@ -31,6 +33,14 @@ const NavigationLinks: NavigationLinkType[] = [
 ];
 
 export default function Sidebar() {
+	const navigate = useNavigate();
+	const { checkUser } = useContext(UserContext);
+	const handleSignOut = async () => {
+		const response = await signOut();
+		if (response.success) {
+			checkUser();
+		}
+	};
 	return (
 		<aside className={"overflow-hidden px-2 py-4 flex flex-col xl:basis-60 md:basis-50 basis-16 shrink-0"}>
 			<Link to="/" className="mb-8">
@@ -43,7 +53,7 @@ export default function Sidebar() {
 					))}
 				</ul>
 			</nav>
-			<button onClick={signOut}>Sign out</button>
+			<button onClick={handleSignOut}>Sign out</button>
 		</aside>
 	);
 }

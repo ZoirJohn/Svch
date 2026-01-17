@@ -18,7 +18,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-	const { user, loading } = useUser();
+	const { user, loading, checkUser } = useUser();
 	return (
 		<html lang="en">
 			<head>
@@ -29,7 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="bg-white text-black">
 				<div className="flex flex-col min-h-screen">
-					<UserContext.Provider value={{ user, loading }}>{children}</UserContext.Provider>
+					<UserContext.Provider value={{ user, loading, checkUser }}>{children}</UserContext.Provider>
 					<ScrollRestoration />
 					<Scripts />
 				</div>
