@@ -1,11 +1,12 @@
 import { Link } from "react-router";
+import logoImg from "../shared/icons/logo-light.svg";
 
 export default function Header() {
 	return (
 		<header className="mt-3 px-3">
 			<div className="container component">
 				<Link to={"/"}>
-					<img src="../shared/icons/logo-light.svg" alt="Logo" loading="eager" />
+					<img src={logoImg} alt="Logo" loading="eager" />
 				</Link>
 				<div>
 					<Link to={"/auth/sign-up"} className="nav-button group">
