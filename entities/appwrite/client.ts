@@ -1,4 +1,4 @@
-import { Client, Account, OAuthProvider, ID, type Models, Databases, TablesDB } from "appwrite";
+import { Client, Account, OAuthProvider, ID, TablesDB } from "appwrite";
 import type { LoginForm, SignupForm } from "shared/types";
 
 export const client = new Client();
@@ -7,6 +7,7 @@ client.setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT).setProject(import.met
 
 export const account = new Account(client);
 export const tables = new TablesDB(client);
+
 export const signUpWithGoogle = () =>
 	account.createOAuth2Session({
 		provider: OAuthProvider.Google,
@@ -14,13 +15,18 @@ export const signUpWithGoogle = () =>
 		failure: "http://localhost:5173/error",
 	});
 
-export const signUpWithEmailPassword = ({ email, password, fullName: name }: SignupForm) =>
-	account.create({
+export const signUpWithEmailPassword = async ({ email, password, fullName: name }: SignupForm) => {
+	const response = await account.create({
 		email,
 		userId: ID.unique(),
 		password,
 		name,
 	});
+	const verificaion = await account.createEmailVerification({
+		url: "https://localhost:5173/verify",
+	});
+	console.log(response, verificaion);
+};
 
 export const signInWithEmailPassword = ({ email, password }: LoginForm) =>
 	account.createEmailPasswordSession({

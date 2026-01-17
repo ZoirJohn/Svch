@@ -6,6 +6,7 @@ import AuthOTPButton from "widgets/AuthOTPButton";
 import FormField from "shared/ui/FormField";
 import { useContext } from "react";
 import { UserContext } from "entities/contexts/UserContext";
+import { signInWithEmailPassword } from "entities/appwrite/client";
 
 const FIELDS = {
 	email: {
@@ -30,17 +31,15 @@ const FIELDS = {
 
 export default function Login() {
 	const { user, loading } = useContext(UserContext);
-	if (loading) return <></>;
-	if (user) return <Navigate replace to={"/dashboard"} />;
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<LoginForm>();
-	const onSubmit: SubmitHandler<LoginForm> = (data) => {
-		console.log(data);
-	};
+	const onSubmit: SubmitHandler<LoginForm> = async ({ email, password }) => await signInWithEmailPassword({ email, password });
 
+	if (loading) return <></>;
+	if (user && user.emailVerification) return <Navigate replace to={"/dashboard"} />;
 	return (
 		<main className="main justify-center items-center">
 			<form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col items-center shadow [&>label]:mb-6 p-8 border border-blue-light rounded-lg [&>label]:w-full md:w-96 bg-white">

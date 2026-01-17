@@ -11,8 +11,14 @@ export const useUser = () => {
 			const currentUser = await account.get();
 			setUser(currentUser);
 		} catch (error) {
-			if (error instanceof AppwriteException && error.code !== 401) console.error("Appwrite fetch error:", error.message);
-			setUser(null);
+			if (error instanceof AppwriteException) {
+				if (error.code === 401) {
+					setUser(null);
+				} else {
+					console.log(error.message);
+					setUser(null);
+				}
+			}
 		} finally {
 			setLoading(false);
 		}
