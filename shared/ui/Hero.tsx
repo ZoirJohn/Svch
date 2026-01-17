@@ -1,4 +1,4 @@
-import bannerImg from "../img/shared/img/banner.avif";
+import bannerImg from "../img/banner.avif";
 
 export default function Hero() {
 	return (
