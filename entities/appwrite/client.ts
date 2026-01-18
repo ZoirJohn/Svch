@@ -1,4 +1,4 @@
-import { Client, Account, OAuthProvider, ID, TablesDB } from "appwrite";
+import { Client, Account, OAuthProvider, ID, TablesDB, AppwriteException } from "appwrite";
 import type { LoginForm, SignupForm } from "shared/types";
 
 export const client = new Client();
@@ -16,16 +16,16 @@ export const signUpWithGoogle = () =>
 	});
 
 export const signUpWithEmailPassword = async ({ email, password, fullName: name }: SignupForm) => {
-	const response = await account.create({
-		email,
-		userId: ID.unique(),
-		password,
-		name,
-	});
-	const verificaion = await account.createEmailVerification({
-		url: "https://localhost:5173/verify",
-	});
-	console.log(response, verificaion);
+	try {
+		const response = await account.create({
+			email,
+			userId: ID.unique(),
+			password,
+			name,
+		});
+	} catch (error) {
+		if (error instanceof AppwriteException ) return { type: "server", message: error.message };
+	}
 };
 
 export const signInWithEmailPassword = ({ email, password }: LoginForm) =>

@@ -12,7 +12,7 @@ export const useUser = () => {
 			setUser(currentUser);
 		} catch (error) {
 			if (error instanceof AppwriteException) {
-				if (error.code === 401) {
+				if (error.code == 401) {
 					setUser(null);
 				} else {
 					console.log(error.message);

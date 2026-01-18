@@ -44,8 +44,14 @@ export default function SignUp() {
 		register,
 		handleSubmit,
 		formState: { errors },
+		setError,
 	} = useForm<SignupForm>();
-	const onSubmit: SubmitHandler<SignupForm> = async ({ email, password, fullName }) => await signUpWithEmailPassword({ email, password, fullName });
+	const onSubmit: SubmitHandler<SignupForm> = async ({ email, password, fullName }) => {
+		const response = await signUpWithEmailPassword({ email, password, fullName });
+		if (response?.message) {
+			setError("root", { ...response });
+		}
+	};
 
 	if (loading) return <>Loading...</>;
 	if (user) return <Navigate replace to={"/dashboard"} />;

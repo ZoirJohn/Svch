@@ -8,7 +8,7 @@ async function createProfile() {
 			try {
 				await tables.getRow({ databaseId: import.meta.env.VITE_APPWRITE_DATABASE_ID, rowId: user.$id, tableId: "profiles" });
 			} catch (error) {
-				if (error instanceof AppwriteException && error.code === 404) {
+				if (error instanceof AppwriteException && error.code == 404) {
 					await tables.createRow(import.meta.env.VITE_APPWRITE_DATABASE_ID, "profiles", user.$id, {
 						$id: user.$id,
 						firstName: user.name.split(" ")[0],

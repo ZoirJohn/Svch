@@ -38,7 +38,7 @@ export default function Login() {
 	} = useForm<LoginForm>();
 	const onSubmit: SubmitHandler<LoginForm> = async ({ email, password }) => await signInWithEmailPassword({ email, password });
 
-	if (loading) return <></>;
+	if (loading) return <>Loading...</>;
 	if (user && user.emailVerification) return <Navigate replace to={"/dashboard"} />;
 	return (
 		<main className="main justify-center items-center">

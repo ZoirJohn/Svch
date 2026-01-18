@@ -5,8 +5,9 @@ import Sidebar from "widgets/Sidebar";
 
 export default function Dashboard() {
 	const { user, loading } = useContext(UserContext);
+
 	if (loading) return <></>;
-	// if (!user) return <Navigate replace to={"/auth/sign-up"} />;
+	if (!user) return <Navigate replace to={"/auth/sign-up"} />;
 	return (
 		<main className="main mx-auto w-full">
 			<div className="container flex">
