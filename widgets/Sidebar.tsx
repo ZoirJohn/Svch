@@ -53,7 +53,9 @@ export default function Sidebar() {
 					))}
 				</ul>
 			</nav>
-			<button onClick={handleSignOut}>Sign out</button>
+			<button onClick={handleSignOut} className="self-baseline bg-blue-light mx-auto mt-auto py-2 px-4 rounded-xl hover:bg-red-800 hover:text-white transition duration-400">
+				Sign out
+			</button>
 		</aside>
 	);
 }
