@@ -5,6 +5,7 @@ import { UserContext } from "entities/contexts/UserContext";
 import { useUser } from "entities/hooks/useUser";
 
 export const links: Route.LinksFunction = () => [
+	{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
 	{
 		rel: "preconnect",
@@ -26,6 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
+				<link rel="icon" type="image/png" href="/favicon.png" />
 			</head>
 			<body className="bg-white text-black">
 				<div className="flex flex-col min-h-screen">
