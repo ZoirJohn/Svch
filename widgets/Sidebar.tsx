@@ -33,7 +33,6 @@ const NavigationLinks: NavigationLinkType[] = [
 ];
 
 export default function Sidebar() {
-	const navigate = useNavigate();
 	const { checkUser } = useContext(UserContext);
 	const handleSignOut = async () => {
 		const response = await signOut();
