@@ -19,4 +19,3 @@ function FormField<T extends FieldValues>({ name, autoComplete, inputType, label
 }
 
 export default memo(FormField) as <T extends FieldValues>(props: Field<T> & { value?: string; inputClassName?: string; labelClassName?: string }) => ReactNode;
-// 

@@ -35,8 +35,14 @@ export default function Login() {
 		register,
 		handleSubmit,
 		formState: { errors },
+		setError,
 	} = useForm<LoginForm>();
-	const onSubmit: SubmitHandler<LoginForm> = async ({ email, password }) => await signInWithEmailPassword({ email, password });
+	const onSubmit: SubmitHandler<LoginForm> = async ({ email, password }) => {
+		const response = await signInWithEmailPassword({ email, password });
+		if (response?.message) {
+			setError("root", { message: response.message });
+		}
+	};
 
 	if (loading) return <>Loading...</>;
 	if (user && user.emailVerification) return <Navigate replace to={"/dashboard"} />;
@@ -48,6 +54,7 @@ export default function Login() {
 					const field = FIELDS[key];
 					return <FormField key={"login-" + key} name={key} label={field.label} inputType={field.inputType} autoComplete={field.autoComplete} register={register} rules={field.rules} errors={errors} labelClassName="bg-primary form-label relative" />;
 				})}
+				{errors.root?.message && <span className="text-red-500 mb-6 text-lg text-start w-full">{errors.root.message}</span>}
 				<button type="submit" className="mb-8 ml-auto px-4 py-2 rounded-lg button-primary">
 					Login
 				</button>

@@ -61,9 +61,9 @@ export default function SignUp() {
 				<h1 className="mb-4 text-4xl!">Sign up</h1>
 				{(Object.keys(FIELDS) as Array<keyof typeof FIELDS>).map((key) => {
 					const { autoComplete, inputType, label, rules } = FIELDS[key];
-					return <FormField autoComplete={autoComplete} errors={errors} inputType={inputType} label={label} register={register} name={key} key={"signup-" + key} rules={rules} />;
+					return <FormField autoComplete={autoComplete} errors={errors} inputType={inputType} label={label} register={register} name={key} key={"signup-" + key} rules={rules} labelClassName="bg-primary form-label relative" />;
 				})}
-				{errors.root?.message}
+				{errors.root?.message && <span className="text-red-500 mb-6 text-lg text-start w-full">{errors.root.message}</span>}
 				<button type="submit" className="mb-8 ml-auto px-4 py-2 rounded-lg button-primary">
 					Sign up
 				</button>

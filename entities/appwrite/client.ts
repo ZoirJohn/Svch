@@ -24,12 +24,17 @@ export const signUpWithEmailPassword = async ({ email, password, fullName: name 
 			name,
 		});
 	} catch (error) {
-		if (error instanceof AppwriteException ) return { type: "server", message: error.message };
+		if (error instanceof AppwriteException) return { type: "server", message: error.message };
 	}
 };
 
-export const signInWithEmailPassword = ({ email, password }: LoginForm) =>
-	account.createEmailPasswordSession({
-		email,
-		password,
-	});
+export const signInWithEmailPassword = async ({ email, password }: LoginForm) => {
+	try {
+		const response = await account.createEmailPasswordSession({
+			email,
+			password,
+		});
+	} catch (error) {
+		if (error instanceof AppwriteException) return { type: "server", message: error.message };
+	}
+};
