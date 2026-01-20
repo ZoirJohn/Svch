@@ -11,8 +11,8 @@ export const tables = new TablesDB(client);
 export const signUpWithGoogle = () =>
 	account.createOAuth2Session({
 		provider: OAuthProvider.Google,
-		success: "http://localhost:5173/dashboard",
-		failure: "http://localhost:5173/error",
+		success: import.meta.env.VITE_ROOT_URL + "/dashboard",
+		failure: import.meta.env.VITE_ROOT_URL + "/error",
 	});
 
 export const signUpWithEmailPassword = async ({ email, password, fullName: name }: SignupForm) => {
