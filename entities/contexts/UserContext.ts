@@ -3,6 +3,7 @@ import { createContext } from "react";
 
 export const UserContext = createContext<{
 	user: Models.User<Models.Preferences> | null;
+	profile: Models.Document | null;
 	loading: boolean;
 	checkUser: () => void;
-}>({ user: null, loading: true, checkUser: () => {} });
+}>({ user: null, profile: null, loading: true, checkUser: () => {} });
