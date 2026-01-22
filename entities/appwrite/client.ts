@@ -10,7 +10,7 @@ export const tables = new TablesDB(client);
 
 const redirectUrl = import.meta.env.VITE_ROOT_URL + "/dashboard";
 const errorUrl = import.meta.env.VITE_ROOT_URL + "/error";
-console.log(redirectUrl, errorUrl);
+
 export const signUpWithGoogle = () =>
 	account.createOAuth2Session({
 		provider: OAuthProvider.Google,
