@@ -11,12 +11,13 @@ export const tables = new TablesDB(client);
 const redirectUrl = import.meta.env.VITE_ROOT_URL + "/dashboard";
 const errorUrl = import.meta.env.VITE_ROOT_URL + "/error";
 
-export const signUpWithGoogle = () =>
-	account.createOAuth2Session({
+export const signUpWithGoogle = () => {
+	const response = account.createOAuth2Session({
 		provider: OAuthProvider.Google,
 		success: redirectUrl,
 		failure: errorUrl,
 	});
+};
 
 export const signUpWithEmailPassword = async ({ email, password, fullName: name }: SignupForm) => {
 	try {
