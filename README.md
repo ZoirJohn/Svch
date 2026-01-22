@@ -85,3 +85,4 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 ---
 
 Built with ❤️ using React Router.
+Welcome to the Modern Dating App that is designed to be deleted
