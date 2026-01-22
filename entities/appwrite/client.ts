@@ -8,11 +8,14 @@ client.setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT).setProject(import.met
 export const account = new Account(client);
 export const tables = new TablesDB(client);
 
+const redirectUrl = import.meta.env.VITE_ROOT_URL + "/dashboard";
+const errorUrl = import.meta.env.VITE_ROOT_URL + "/error";
+console.log(redirectUrl, errorUrl);
 export const signUpWithGoogle = () =>
 	account.createOAuth2Session({
 		provider: OAuthProvider.Google,
-		success: import.meta.env.VITE_ROOT_URL + "/dashboard",
-		failure: import.meta.env.VITE_ROOT_URL + "/error",
+		success: redirectUrl,
+		failure: errorUrl,
 	});
 
 export const signUpWithEmailPassword = async ({ email, password, fullName: name }: SignupForm) => {
