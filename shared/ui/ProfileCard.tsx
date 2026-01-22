@@ -5,12 +5,12 @@ export default function ProfileCard(props: Profile) {
 	const { fullName, age, img, location, bio } = props;
 	return (
 		<>
-			<div className="group relative flex shadow-xl rounded-2xl w-full max-w-120 min-h-160 overflow-hidden">
+			<div className="group relative flex shadow-xl rounded-2xl w-full max-w-120 min-h-160 overflow-hidden max-xs:min-h-100">
 				<div className="z-2 absolute size-full before">
 					<img src={img} alt="Profile picture" className="size-full object-cover group-hover:scale-105 duration-500" />
 				</div>
-				<div className="z-3 relative flex flex-col justify-end gap-y-2 bg-linear-to-t from-black to-40% p-8 font-bold grow">
-					<h3 className="text-white">
+				<div className="z-3 relative flex flex-col justify-end gap-y-2 bg-linear-to-t from-black to-40% p-8 font-bold grow  max-md:p-4">
+					<h3 className="text-white max-xs:text-2xl!">
 						{fullName}, {age}
 					</h3>
 					<p className="flex items-center gap-x-1 font-medium text-gray-200 text-lg">
