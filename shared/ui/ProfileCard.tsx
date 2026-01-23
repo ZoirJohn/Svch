@@ -21,7 +21,7 @@ export default function ProfileCard(props: Profile) {
 					</p>
 					<p className="text-gray-200 italic">"Wassup"</p>
 					<div className="flex flex-wrap gap-2 mb-2 text-white">
-						{bio.map((tag) => (
+						{bio?.split(" ").map((tag) => (
 							<span key={tag} className="bg-white/20 backdrop-blur-md px-2 py-1 rounded-full font-bold text-[10px] uppercase tracking-widest">
 								{tag}
 							</span>

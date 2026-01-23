@@ -27,7 +27,7 @@ export interface Field<T extends FieldValues> {
 export interface Profile {
 	firstName: string;
 	lastName: string;
-	bio?: string[];
+	bio?: string;
 	profilePictureUrl?: string;
 	dateOfBirth?: string;
 	location?: string;
