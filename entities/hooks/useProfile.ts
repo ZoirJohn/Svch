@@ -23,5 +23,5 @@ export const useProfile = (rowId: string) => {
 	useEffect(() => {
 		fetchProfile();
 	}, [fetchProfile]);
-	return { profile, loading };
+	return { profile, loading, fetchProfile };
 };

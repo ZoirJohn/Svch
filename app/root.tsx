@@ -3,6 +3,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { UserContext } from "entities/contexts/UserContext";
 import { useUser } from "entities/hooks/useUser";
+import { useProfile } from "entities/hooks/useProfile";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -20,6 +21,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const { user, loading, checkUser } = useUser();
+	const { profile, fetchProfile } = useProfile(user?.$id || "");
 	return (
 		<html lang="en">
 			<head>
@@ -31,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="bg-white text-black">
 				<div className="flex flex-col min-h-screen">
-					<UserContext.Provider value={{ user, loading, checkUser }}>{children}</UserContext.Provider>
+					<UserContext.Provider value={{ user, loading, checkUser, profile }}>{children}</UserContext.Provider>
 					<ScrollRestoration />
 					<Scripts />
 				</div>
