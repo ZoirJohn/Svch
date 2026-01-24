@@ -1,4 +1,4 @@
-export default function ProfileDetail({ detail, value }: { detail: "First name" | "Last name" | "Age" | "Location" | "Bio"; value: string }) {
+export default function ProfileDetail({ detail, value }: { detail: string; value: string }) {
 	return (
 		<div className="flex flex-col">
 			<p className="col-start-2 col-end-3">{detail}</p>
