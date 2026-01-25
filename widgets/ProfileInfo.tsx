@@ -8,7 +8,7 @@ export default function ProfileInfo({ profile, closeProfile }: { closeProfile: (
 	const age = useMemo(() => getAge(doesAgeExist).toString(), [profile?.dateOfBirth]);
 	const PROFILE_KEYS: (keyof typeof profile)[] = ["firstName", "lastName", "bio", "dateOfBirth", "location", "gender"];
 	const LABELS = ["First name", "Last name", "Bio", "Age", "Location", "Gender"];
-
+	
 	return (
 		<div className="flex p-4 gap-x-32 gap-16 flex-wrap">
 			{PROFILE_KEYS.map((key, i) => (

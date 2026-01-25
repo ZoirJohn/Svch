@@ -1,8 +1,16 @@
-export const getAge = (date: Date) => {
-	const thisDate = new Date();
-	const [thisYear, thisMonth, thisDay] = [thisDate.getFullYear(), thisDate.getMonth(), thisDate.getDate()];
-	const [birthYear, birthMonth, birthDay] = [date.getFullYear(), date.getMonth(), date.getDate()];
-	let age = thisYear - birthYear;
-	if (thisMonth > birthMonth || (thisMonth == birthMonth && thisDay < birthDay)) age--;
+export const getAge = (birthDate: Date | string): number => {
+	const date = typeof birthDate === "string" ? new Date(birthDate) : birthDate;
+
+	const today = new Date();
+	const birthYear = date.getFullYear();
+	const birthMonth = date.getMonth();
+	const birthDay = date.getDate();
+
+	let age = today.getFullYear() - birthYear;
+
+	if (today.getMonth() < birthMonth || (today.getMonth() === birthMonth && today.getDate() < birthDay)) {
+		age--;
+	}
+
 	return age;
 };

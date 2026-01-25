@@ -1,21 +1,9 @@
+import updateProfile from "entities/utils/updateProfile";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import type { Profile } from "shared/types";
 import FormField from "shared/ui/FormField";
 
-export default function Form({
-	defaultValues,
-	closeForm,
-}: {
-	defaultValues: {
-		firstName: string;
-		lastName: string;
-		bio?: string;
-		dateOfBirth?: string;
-		location?: string;
-		gender?: string;
-	};
-	closeForm: () => void;
-}) {
+export default function Form({ defaultValues, closeForm, rowId }: { defaultValues: Omit<Profile, "profilePictureUrl">; closeForm: () => void; rowId: string }) {
 	const {
 		register,
 		handleSubmit,
@@ -30,8 +18,18 @@ export default function Form({
 			gender: defaultValues.gender,
 		},
 	});
-	const onSubmit: SubmitHandler<Omit<Profile, "profilePictureUrl">> = ({ firstName, lastName, bio, dateOfBirth, gender, location }) => {
-		console.log({ firstName, lastName, bio, dateOfBirth, gender, location });
+	const onSubmit: SubmitHandler<Omit<Profile, "profilePictureUrl">> = (formData) => {
+		let hasChanges = false;
+		for (const key in formData) {
+			if (defaultValues[key as keyof typeof defaultValues] !== formData[key as keyof typeof formData]) {
+				hasChanges = true;
+				break;
+			}
+		}
+		if (hasChanges) {
+			updateProfile({ rowId, ...formData });
+		}
+		closeForm();
 	};
 	return (
 		<form className="w-1/2 flex flex-col gap-8 p-4" onSubmit={handleSubmit(onSubmit)}>
@@ -40,15 +38,11 @@ export default function Form({
 				return <FormField autoComplete="name" errors={errors} inputType={field.inputType} label={field.label} name={key} register={register} key={key} />;
 			})}
 			<div className="flex flex-col">
-				<label htmlFor="male" className="flex items-center gap-2">
-					<input type="radio" className="outline-none! size-5!" name="gender" id="male" />
-					<span>Male</span>
-				</label>
-
-				<label htmlFor="female" className="flex items-center gap-2">
-					<input type="radio" className="outline-none! size-5!" name="gender" id="female" />
-					<span>Female</span>
-				</label>
+				<label>Gender Selection</label>
+				<select {...register("gender")}>
+					<option value="Female">Female</option>
+					<option value="Male">Male</option>
+				</select>
 			</div>
 			<button type="submit">Send</button>
 		</form>

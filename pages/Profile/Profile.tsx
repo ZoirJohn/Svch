@@ -5,7 +5,7 @@ import ProfileInfo from "widgets/ProfileInfo";
 
 export default function Profile() {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
-	const { profile } = useContext(UserContext);
+	const { profile, user } = useContext(UserContext);
 	if (!profile?.firstName) return <></>;
 
 	const profileInfo = {
@@ -19,7 +19,7 @@ export default function Profile() {
 	return (
 		<section className="w-full flex p-4 flex-col items-start">
 			<h2 className="text-3xl! w-full">Profile Details</h2>
-			{isFormOpen ? <Form defaultValues={profile} closeForm={() => setIsFormOpen(false)} /> : <ProfileInfo profile={profileInfo} closeProfile={() => setIsFormOpen(true)} />}
+			{isFormOpen ? <Form defaultValues={profile} closeForm={() => setIsFormOpen(false)} rowId={user?.$id || ""} /> : <ProfileInfo profile={profileInfo} closeProfile={() => setIsFormOpen(true)} />}
 		</section>
 	);
 }
