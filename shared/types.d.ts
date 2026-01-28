@@ -31,5 +31,5 @@ export interface Profile {
 	profilePictureUrl?: string;
 	dateOfBirth?: string;
 	location?: string;
-	gender?: string;
+	gender?: "Male" | "Female";
 }

@@ -13,7 +13,7 @@ export default function Form({ defaultValues, closeForm, rowId }: { defaultValue
 			firstName: defaultValues?.firstName,
 			lastName: defaultValues?.lastName,
 			bio: defaultValues.bio,
-			dateOfBirth: defaultValues.dateOfBirth,
+			dateOfBirth: defaultValues.dateOfBirth ? new Date(defaultValues.dateOfBirth).toISOString().split("T")[0] : undefined,
 			location: defaultValues.location,
 			gender: defaultValues.gender,
 		},
