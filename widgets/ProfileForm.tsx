@@ -3,31 +3,32 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import type { Profile } from "shared/types";
 import FormField from "shared/ui/FormField";
 
-export default function Form({ defaultValues, closeForm, rowId }: { defaultValues: Omit<Profile, "profilePictureUrl">; closeForm: () => void; rowId: string }) {
+export default function Form({ values, closeForm, rowId }: { values: Omit<Profile, "profilePictureUrl">; closeForm: () => void; rowId: string }) {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm({
 		defaultValues: {
-			firstName: defaultValues?.firstName,
-			lastName: defaultValues?.lastName,
-			bio: defaultValues.bio,
-			dateOfBirth: defaultValues.dateOfBirth ? new Date(defaultValues.dateOfBirth).toISOString().split("T")[0] : undefined,
-			location: defaultValues.location,
-			gender: defaultValues.gender,
+			firstName: values?.firstName,
+			lastName: values?.lastName,
+			bio: values.bio,
+			dateOfBirth: values.dateOfBirth,
+			location: values.location,
+			gender: values.gender,
 		},
+		values,
 	});
 	const onSubmit: SubmitHandler<Omit<Profile, "profilePictureUrl">> = (formData) => {
 		let hasChanges = false;
 		for (const key in formData) {
-			if (defaultValues[key as keyof typeof defaultValues] !== formData[key as keyof typeof formData]) {
+			if (values[key as keyof typeof values] !== formData[key as keyof typeof formData]) {
 				hasChanges = true;
 				break;
 			}
 		}
+		console.log(values, formData.dateOfBirth);
 		if (hasChanges) {
-			updateProfile({ rowId, ...formData });
 		}
 		closeForm();
 	};

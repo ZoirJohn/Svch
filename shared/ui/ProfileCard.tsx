@@ -2,16 +2,16 @@ import type { Profile } from "shared/types";
 import CardButton from "./CardButton";
 
 export default function ProfileCard(props: Profile) {
-	const { fullName, age, img, location, bio } = props;
+	const { firstName, lastName, dateOfBirth, profilePictureUrl, location, bio } = props;
 	return (
 		<>
 			<div className="group relative flex shadow-xl rounded-2xl w-full max-w-120 min-h-160 overflow-hidden max-xs:min-h-100">
 				<div className="z-2 absolute size-full before">
-					<img src={img} alt="Profile picture" className="size-full object-cover group-hover:scale-105 duration-500" />
+					<img src={profilePictureUrl} alt="Profile picture" className="size-full object-cover group-hover:scale-105 duration-500" />
 				</div>
 				<div className="z-3 relative flex flex-col justify-end gap-y-2 bg-linear-to-t from-black to-40% p-8 font-bold grow  max-md:p-4">
 					<h3 className="text-white max-xs:text-2xl!">
-						{fullName}, {age}
+						{firstName} {lastName}, {dateOfBirth?.getFullYear()}
 					</h3>
 					<p className="flex items-center gap-x-1 font-medium text-gray-200 text-lg">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="fill-gray-200 w-4">
