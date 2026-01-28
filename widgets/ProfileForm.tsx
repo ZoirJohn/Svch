@@ -26,7 +26,7 @@ export default function Form({ values, closeForm, rowId }: { values: Omit<Profil
 			}
 		}
 		if (hasChanges) {
-			// updateProfile({ ...formData, rowId });
+			updateProfile({ ...formData, rowId });
 		}
 		closeForm();
 	};
