@@ -10,7 +10,7 @@ export const useProfile = (rowId: string) => {
 		try {
 			setLoading(true);
 			const response = await tables.getRow<Profile & Models.Row>({ databaseId: import.meta.env.VITE_APPWRITE_DATABASE_ID, rowId, tableId: "profiles" });
-			setProfile(response);
+			setProfile({ ...response, dateOfBirth: response.dateOfBirth?.split("T")[0] });
 		} catch (error) {
 			if (error instanceof AppwriteException) {
 				console.error(error.message);

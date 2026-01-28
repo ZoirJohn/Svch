@@ -13,22 +13,20 @@ export default function Form({ values, closeForm, rowId }: { values: Omit<Profil
 			firstName: values?.firstName,
 			lastName: values?.lastName,
 			bio: values.bio,
-			dateOfBirth: values.dateOfBirth,
+			dateOfBirth: values.dateOfBirth ? new Date(values.dateOfBirth).toISOString().split("T")[0] : undefined,
 			location: values.location,
 			gender: values.gender,
 		},
-		values,
 	});
 	const onSubmit: SubmitHandler<Omit<Profile, "profilePictureUrl">> = (formData) => {
 		let hasChanges = false;
 		for (const key in formData) {
 			if (values[key as keyof typeof values] !== formData[key as keyof typeof formData]) {
 				hasChanges = true;
-				break;
 			}
 		}
-		console.log(values, formData.dateOfBirth);
 		if (hasChanges) {
+			// updateProfile({ ...formData, rowId });
 		}
 		closeForm();
 	};

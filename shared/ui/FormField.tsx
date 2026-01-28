@@ -8,7 +8,7 @@ function FormField<T extends FieldValues>({ name, autoComplete, inputType, label
 	return (
 		<label htmlFor={name} className={labelClassName}>
 			{label}
-			<input {...field} type={inputType} id={name} autoComplete={autoComplete} aria-describedby={`${name}Error`} aria-invalid={!!error} value={value} className={inputClassName || ""} placeholder={placeholder} />
+			<input {...field} type={inputType} id={name} autoComplete={autoComplete} aria-describedby={`${name}Error`} aria-invalid={!!error} defaultValue={value} className={inputClassName || ""} placeholder={placeholder} />
 			{error?.message && (
 				<span className="input-error -bottom-6 left-0" id={`${name}Error`} role="alert">
 					{error?.message}

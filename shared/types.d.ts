@@ -29,7 +29,7 @@ export interface Profile {
 	lastName: string;
 	bio?: string;
 	profilePictureUrl?: string;
-	dateOfBirth?: Date;
+	dateOfBirth?: string;
 	location?: string;
 	gender?: "Male" | "Female";
 }
